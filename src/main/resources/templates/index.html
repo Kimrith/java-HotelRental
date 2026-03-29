@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Hotel Rental</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-$END$
+<body class="min-h-screen flex flex-col">
+
+<!-- Top Layout -->
+<div class="flex flex-1">
+<!-- slider -->
+<aside th:replace="Layout/Slider :: sidebar"></aside>
+<!-- OUTLET -->
+<main class="flex-1 p-6">
+    <div th:replace="${content}"></div>
+</main>
+</div>
+<!-- footer -->
+<footer th:replace="Layout/footer :: footer"></footer>
+
 </body>
 </html>

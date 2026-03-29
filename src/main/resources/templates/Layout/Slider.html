@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-$END$
+<aside th:fragment="sidebar"
+       class="w-64 min-h-screen bg-gray-900 text-gray-300 flex flex-col">
+    <!-- Logo -->
+    <div class="flex items-center gap-2 px-6 py-5 border-b border-gray-700">
+        <i class="fa-solid fa-hotel text-white text-lg"></i>
+        <span class="text-white text-xl font-semibold">
+            StayHub
+        </span>
+    </div>
+    <!-- Menu -->
+    <nav class="flex-1 px-3 py-4 space-y-1">
+        <!-- Dashboard -->
+        <a th:href="@{/Dashboard}"
+           class="flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500">
+
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+        <!-- Search Hotels -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search Hotels
+        </a>
+        <!-- My Bookings -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-calendar-check"></i>
+            My Bookings
+        </a>
+        <!-- Favorites -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-heart"></i>
+            Favorites
+        </a>
+        <!-- Messages -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-message"></i>
+            Messages
+
+        </a>
+        <!-- Payments -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-credit-card"></i>
+            Payments
+        </a>
+        <!-- Profile -->
+        <a href="#"
+           class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
+
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+    </nav>
+    <!-- Logout -->
+    <div class="px-4 py-4 border-t border-gray-700">
+        <a href="#"
+           class="flex items-center gap-3 text-red-500 hover:text-red-400">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+
+        </a>
+    </div>
+</aside>
 </body>
 </html>
