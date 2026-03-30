@@ -14,14 +14,14 @@
 <!-- Top Layout -->
 <div class="flex flex-1">
 <!-- slider -->
-<aside th:replace="Layout/Slider :: sidebar"></aside>
+<aside th:replace="user/Layout/Slider :: sidebar"></aside>
 <!-- OUTLET -->
 <main class="flex-1">
     <div th:replace="${content}"></div>
 </main>
 </div>
 <!-- footer -->
-<footer th:replace="Layout/footer :: footer"></footer>
+<footer th:replace="user/Layout/footer :: footer"></footer>
 
 </body>
 </html>
