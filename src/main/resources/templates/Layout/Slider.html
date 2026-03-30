@@ -5,7 +5,7 @@
 </head>
 <body>
 <aside th:fragment="sidebar"
-       class="w-64 min-h-screen bg-gray-900 text-gray-300 flex flex-col">
+       class="w-64 min-h-screen bg-gray-900 py-2 text-gray-300 flex flex-col">
     <!-- Logo -->
     <div class="flex items-center gap-2 px-6 py-5 border-b border-gray-700">
         <i class="fa-solid fa-hotel text-white text-lg"></i>
@@ -14,37 +14,37 @@
         </span>
     </div>
     <!-- Menu -->
-    <nav class="flex-1 px-3 py-4 space-y-1">
+    <nav class="flex-1 px-3 py-6 space-y-1">
         <!-- Dashboard -->
-        <a th:href="@{/Dashboard}"
+        <a th:href="@{/dashboard/home}"
            class="flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500">
 
             <i class="fa-solid fa-house"></i>
             Dashboard
         </a>
         <!-- Search Hotels -->
-        <a href="#"
+        <a th:href="@{/dashboard/search}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-magnifying-glass"></i>
             Search Hotels
         </a>
         <!-- My Bookings -->
-        <a href="#"
+        <a th:href="@{/dashboard/mybooking}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-calendar-check"></i>
             My Bookings
         </a>
         <!-- Favorites -->
-        <a href="#"
+        <a th:href="@{/dashboard/favorite}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-heart"></i>
             Favorites
         </a>
         <!-- Messages -->
-        <a href="#"
+        <a th:href="@{/dashboard/message}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-message"></i>
@@ -52,14 +52,14 @@
 
         </a>
         <!-- Payments -->
-        <a href="#"
+        <a th:href="@{/dashboard/payment}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-credit-card"></i>
             Payments
         </a>
         <!-- Profile -->
-        <a href="#"
+        <a th:href="@{/dashboard/profile}"
            class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded">
 
             <i class="fa-solid fa-user"></i>
