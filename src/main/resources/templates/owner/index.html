@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Rental - Owner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+<div class="flex flex-1">
+    <!-- slider -->
+    <aside th:replace="owner/Layout/Slider :: sidebar(${active})"></aside>
+
+    <!-- OUTLET -->
+    <main class="flex-1">
+        <div th:replace="${content}"></div>
+    </main>
+</div>
+
+</body>
+</html>
