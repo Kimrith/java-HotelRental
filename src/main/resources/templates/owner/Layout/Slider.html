@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<aside th:fragment="sidebar(active)"
+       class="w-64 min-h-screen bg-gray-900 py-2 text-gray-300 flex flex-col">
+    <div class="flex items-center gap-2 px-6 py-5 border-b border-gray-700">
+        <i class="fa-solid fa-hotel text-white text-lg"></i>
+        <span class="text-white text-xl font-semibold">StayHub Owner</span>
+    </div>
+
+    <nav class="flex-1 px-3 py-6 space-y-1">
+        <a th:href="@{/owner/home}"
+           th:class="${active == 'home'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a th:href="@{/owner/hotel}"
+           th:class="${active == 'hotel'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-building"></i>
+            <span>My Hotels</span>
+        </a>
+
+        <a th:href="@{/owner/booking}"
+           th:class="${active == 'booking'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Bookings</span>
+        </a>
+
+        <a th:href="@{/owner/message}"
+           th:class="${active == 'message'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+
+        <a th:href="@{/owner/payment}"
+           th:class="${active == 'payment'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Payments</span>
+        </a>
+
+        <a th:href="@{/owner/profile}"
+           th:class="${active == 'profile'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <div class="px-4 py-4 border-t border-gray-700">
+        <a href="#"
+           class="flex items-center gap-3 text-red-500 hover:text-red-400">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
+
+</body>
+</html>
