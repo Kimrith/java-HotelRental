@@ -8,20 +8,46 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts: Inter for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,
+    400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Modern App" Way (Using Flatpickr) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
-<body class="min-h-screen flex flex-col">
+<!-- Mobile overlay -->
+<div id="overlay"
+     class="fixed inset-0 max-sm:bg-black/50 hidden z-50 md:hidden">
 
-<!-- Top Layout -->
-<div class="flex flex-1">
-<!-- slider -->
-<aside th:replace="user/Layout/Slider :: sidebar(${active})"></aside>
-<!-- OUTLET -->
-<main class="flex-1">
-    <div th:replace="${content}"></div>
-</main>
 </div>
-<!-- footer -->
-<footer th:replace="user/Layout/footer :: footer"></footer>
+<body class="min-h-screen flex flex-col">
+    <div class="flex flex-1">
+    <aside th:replace="user/Layout/Slider :: sidebar(${active})"></aside>
 
+    <main class="flex-1 mt-14 md:mt-16 md:ml-64 p-5">
+        <header th:replace="user/share/header :: header(${title})"></header>
+        <div th:replace="${content}"></div>
+    </main>
+    </div>
+    <!--<footer th:replace="user/Layout/footer :: footer"></footer>-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuBtn = document.getElementById("menuBtn");
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            if (menuBtn && sidebar) {
+                menuBtn.addEventListener("click", function () {
+                    sidebar.classList.toggle("-translate-x-full");
+                    overlay.classList.toggle("hidden");
+                });
+                overlay.addEventListener("click", function () {
+                    sidebar.classList.add("-translate-x-full");
+                    overlay.classList.add("hidden");
+                });
+            }
+        });
+    </script>
 </body>
 </html>

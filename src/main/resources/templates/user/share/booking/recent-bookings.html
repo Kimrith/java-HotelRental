@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 class="text-lg font-semibold text-gray-700 mb-4">
+  Recent Bookings
+</h3>
+<div th:fragment="booking" class="bg-white rounded-lg shadow overflow-x-auto">
+  <table class="w-full text-left">
+    <thead class="bg-gray-100">
+    <tr>
+      <th class="p-3">Hotel Name</th>
+      <th class="p-3">Check-in</th>
+      <th class="p-3">Check-out</th>
+      <th class="p-3">Total Price</th>
+      <th class="p-3">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="border-t">
+      <td class="p-3">
+        Grand Resort & Spa
+      </td>
+      <td class="p-3">
+        Oct 15, 2023
+      </td>
+      <td class="p-3">
+        Oct 20, 2023
+      </td>
+      <td class="p-3">
+        $600
+      </td>
+      <td class="p-3">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">
+                            Confirmed
+                        </span>
+      </td>
+    </tr>
+    <tr class="border-t">
+      <td class="p-3">
+        City Lights Inn
+      </td>
+      <td class="p-3">
+        Nov 01, 2023
+      </td>
+      <td class="p-3">
+        Nov 03, 2023
+      </td>
+      <td class="p-3">
+        $180
+      </td>
+      <td class="p-3">
+        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm">
+          Pending
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
