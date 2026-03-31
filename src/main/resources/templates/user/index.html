@@ -14,7 +14,7 @@
 <!-- Top Layout -->
 <div class="flex flex-1">
 <!-- slider -->
-<aside th:replace="user/Layout/Slider :: sidebar"></aside>
+<aside th:replace="user/Layout/Slider :: sidebar(${active})"></aside>
 <!-- OUTLET -->
 <main class="flex-1">
     <div th:replace="${content}"></div>
