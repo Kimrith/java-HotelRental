@@ -10,76 +10,114 @@
 <!-- MAIN CONTENT ONLY (NO HEADER / SIDEBAR) -->
 <div th:fragment="mybooking" class="mx-auto p-2">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- LEFT SIDE: FORM -->
-        <div class="lg:col-span-2 space-y-6">
-            <!-- Enter Details -->
-            <div class="bg-white rounded-xl shadow p-6">
-                <h2 class="text-lg font-semibold mb-4">Enter your details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="text-sm text-gray-600">First Name</label>
-                        <input type="text"
-                               class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                               placeholder="John">
+        <div class="bg-white rounded-xl shadow p-5 md:hidden">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     class="w-full h-40 object-cover rounded-lg mb-4"
+                     alt="Hotel">
+                <p class="text-sm text-gray-500">HOTEL</p>
+                <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+                <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>Check-in</span>
+                        <span>Thu, 15 Oct</span>
                     </div>
-                    <div>
-                        <label class="text-sm text-gray-600">Last Name</label>
-                        <input type="text"
-                               class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                               placeholder="Doe">
+                    <div class="flex justify-between mt-1">
+                        <span>Check-out</span>
+                        <span>Sun, 20 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Total stay</span>
+                        <span>5 nights</span>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <label class="text-sm text-gray-600">Email Address</label>
-                    <input type="email"
-                           class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                           placeholder="john@example.com">
+                <div class="mt-4 text-sm">
+                    <p class="text-gray-500">You selected:</p>
+                    <p class="font-medium">1x Deluxe Double Room</p>
+                    <p class="text-gray-600">2 Adults</p>
                 </div>
-                <div class="mt-4">
-                    <label class="text-sm text-gray-600">Special Requests</label>
-                    <textarea rows="4"
-                              class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                              placeholder="Please write your requests..."></textarea>
+                <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                    <span class="font-semibold">Total Price</span>
+                    <span class="text-blue-600 font-bold text-lg">$600</span>
                 </div>
-            </div>
-            <!-- Payment Method -->
-            <div class="bg-white rounded-xl shadow p-6">
-                <h2 class="text-lg font-semibold mb-4">Payment Method</h2>
-                <div class="space-y-4">
-                    <!-- KHQR -->
-                    <label class="flex items-center justify-between border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
-                        <div class="flex items-center gap-3">
-                            <input type="radio" name="payment" checked>
-                            <div>
-                                <p class="font-medium">KHQR Pay</p>
-                                <p class="text-sm text-gray-500">Scan via any mobile banking app</p>
-                            </div>
-                        </div>
-                        <span class="text-blue-600 text-xl">▦</span>
-                    </label>
-                    <!-- Cash -->
-                    <label class="flex items-center justify-between border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
-                        <div class="flex items-center gap-3">
-                            <input type="radio" name="payment">
-                            <div>
-                                <p class="font-medium">Pay at Property (Cash)</p>
-                                <p class="text-sm text-gray-500">Pay directly to the hotel upon arrival</p>
-                            </div>
-                        </div>
-                        <span class="text-green-600 text-xl">💵</span>
-                    </label>
-                </div>
-                <!-- Button -->
-                <div class="flex justify-end mt-6">
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
-                        Confirm Booking
+                <div class="flex justify-end mt-6 pt-4 border-t">
+                    <button
+                            type="button"
+                            class="bg-green-500 hover:bg-green-600
+                       text-white px-5 py-2
+                       rounded-lg">
+                        Confirm
                     </button>
                 </div>
-            </div>
-        </div>
+                </div>
+        <!-- LEFT SIDE: FORM -->
+<!--        <div class="lg:col-span-2 space-y-6 max-sm:hidden">-->
+<!--            &lt;!&ndash; Enter Details &ndash;&gt;-->
+<!--            <div class="bg-white rounded-xl shadow p-6">-->
+<!--                <h2 class="text-lg font-semibold mb-4">Enter your details</h2>-->
+<!--                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">-->
+<!--                    <div>-->
+<!--                        <label class="text-sm text-gray-600">First Name</label>-->
+<!--                        <input type="text"-->
+<!--                               class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--                               placeholder="John">-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <label class="text-sm text-gray-600">Last Name</label>-->
+<!--                        <input type="text"-->
+<!--                               class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--                               placeholder="Doe">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="mt-4">-->
+<!--                    <label class="text-sm text-gray-600">Email Address</label>-->
+<!--                    <input type="email"-->
+<!--                           class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--                           placeholder="john@example.com">-->
+<!--                </div>-->
+<!--                <div class="mt-4">-->
+<!--                    <label class="text-sm text-gray-600">Special Requests</label>-->
+<!--                    <textarea rows="4"-->
+<!--                              class="w-full border rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--                              placeholder="Please write your requests..."></textarea>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Payment Method &ndash;&gt;-->
+<!--            <div class="bg-white rounded-xl shadow p-6">-->
+<!--                <h2 class="text-lg font-semibold mb-4">Payment Method</h2>-->
+<!--                <div class="space-y-4">-->
+<!--                    &lt;!&ndash; KHQR &ndash;&gt;-->
+<!--                    <label class="flex items-center justify-between border rounded-lg p-4 cursor-pointer hover:bg-gray-50">-->
+<!--                        <div class="flex items-center gap-3">-->
+<!--                            <input type="radio" name="payment" checked>-->
+<!--                            <div>-->
+<!--                                <p class="font-medium">KHQR Pay</p>-->
+<!--                                <p class="text-sm text-gray-500">Scan via any mobile banking app</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <span class="text-blue-600 text-xl">▦</span>-->
+<!--                    </label>-->
+<!--                    &lt;!&ndash; Cash &ndash;&gt;-->
+<!--                    <label class="flex items-center justify-between border rounded-lg p-4 cursor-pointer hover:bg-gray-50">-->
+<!--                        <div class="flex items-center gap-3">-->
+<!--                            <input type="radio" name="payment">-->
+<!--                            <div>-->
+<!--                                <p class="font-medium">Pay at Property (Cash)</p>-->
+<!--                                <p class="text-sm text-gray-500">Pay directly to the hotel upon arrival</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <span class="text-green-600 text-xl">💵</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Button &ndash;&gt;-->
+<!--                <div class="flex justify-end mt-6">-->
+<!--                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">-->
+<!--                        Confirm Booking-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- RIGHT SIDE: BOOKING SUMMARY -->
-        <div>
-            <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 max-sm:hidden">
                 <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
                      class="w-full h-40 object-cover rounded-lg mb-4"
                      alt="Hotel">
@@ -109,8 +147,8 @@
                     <span class="text-blue-600 font-bold text-lg">$600</span>
                 </div>
             </div>
-        </div>
     </div>
+
 </div>
 </body>
 </html>
