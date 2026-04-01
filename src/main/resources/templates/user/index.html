@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Rental</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,16 +15,14 @@
     <!-- Modern App" Way (Using Flatpickr) -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
 <!-- Mobile overlay -->
 <div id="overlay"
-     class="fixed inset-0 max-sm:bg-black/50 hidden z-50 md:hidden">
-
+     class="fixed inset-0 bg-black/50 hidden z-40 md:hidden">
 </div>
-<body class="min-h-screen flex flex-col">
     <div class="flex flex-1">
     <aside th:replace="user/Layout/Slider :: sidebar(${active})"></aside>
-
-    <main class="flex-1 mt-14 md:mt-16 md:ml-64 p-5">
+        <main class="flex-1 mt-14 md:mt-16 mt-20 md:ml-64 md:p-5">
         <header th:replace="user/share/header :: header(${title})"></header>
         <div th:replace="${content}"></div>
     </main>
