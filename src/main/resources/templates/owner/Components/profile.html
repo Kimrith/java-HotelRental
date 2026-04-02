@@ -1,19 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<div class="bg-red-500 drop-shadow w-full h-12 flex items-center px-6">
-    <h2 class="text-xl font-semibold">
-        Profile
-    </h2>
-</div>
-<div class="flex items-center justify-center min-h-[80vh]">
-    <h2 class="text-3xl font-bold text-pink-500">
-      jjjjjjjjjjjj
-    </h2>
+<div th:fragment="content" class="flex flex-col h-full space-y-6 pb-8">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-2">
+        <h2 class="text-2xl font-bold text-slate-800">Account Information</h2>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 shadow-sm transition-colors">
+            <i class="fa-solid fa-floppy-disk text-[11px]"></i> Save Changes
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <!-- Left Column: Profile Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col items-center col-span-1">
+            <div class="w-24 h-24 rounded-full bg-[#1eab89] text-white flex items-center justify-center text-4xl font-bold mb-5 shadow-sm">
+                M
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-1.5">Manager Smith</h3>
+            <p class="text-xs font-bold text-gray-400 mb-6">Hotel Owner / Property Manager</p>
+            
+            <div class="flex w-full gap-3 justify-center mb-8">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-bold text-[11px] transition-colors shadow-sm">
+                    Upload Photo
+                </button>
+                <button class="bg-white hover:bg-gray-50 border border-gray-200 text-gray-600 px-5 py-2 rounded-full font-bold text-[11px] transition-colors shadow-sm">
+                    Remove
+                </button>
+            </div>
+
+            <div class="w-full bg-gray-50 bg-opacity-70 rounded-xl p-5 space-y-4">
+                <div class="flex justify-between items-center text-xs">
+                    <span class="font-bold text-gray-500">Total Properties:</span>
+                    <span class="font-bold text-slate-800">3</span>
+                </div>
+                <div class="flex justify-between items-center text-xs">
+                    <span class="font-bold text-gray-500">Member Since:</span>
+                    <span class="font-bold text-slate-800">Jan 2022</span>
+                </div>
+                <div class="flex justify-between items-center text-xs">
+                    <span class="font-bold text-gray-500">Account Status:</span>
+                    <span class="px-2.5 py-1 bg-green-100/60 text-green-600 text-[10px] font-bold tracking-wider rounded-md">Active</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Form Cards -->
+        <div class="col-span-1 lg:col-span-2 space-y-6">
+            <!-- Personal Details Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                <h3 class="text-[15px] font-bold text-slate-800 mb-6">Personal Details</h3>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-2">Full Name</label>
+                        <input type="text" value="Manager Smith" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-2">Email Address</label>
+                            <input type="email" value="smith@hotel.com" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-2">Phone Number</label>
+                            <input type="text" value="+1 234 567 8900" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-2">Company/Business Name</label>
+                        <input type="text" value="Smith Hospitality Group" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-2">Business Address</label>
+                        <textarea rows="3" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow resize-none">123 Hotel Avenue, Downtown District</textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Security & Password Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                <h3 class="text-[15px] font-bold text-slate-800 mb-6">Security & Password</h3>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-2">Current Password</label>
+                        <input type="password" value="password" placeholder="Enter current password" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow placeholder:text-gray-400">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-2">New Password</label>
+                            <input type="password" placeholder="Enter new password" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow placeholder:text-gray-400">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-2">Confirm Password</label>
+                            <input type="password" placeholder="Confirm new password" class="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-blue-500 bg-white text-[13px] font-medium text-gray-800 transition-shadow placeholder:text-gray-400">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
