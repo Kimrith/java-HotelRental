@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
+<body class="overflow-x-hidden">
 
 <div th:fragment="content(username)"
-     class="min-h-screen">
+     class="w-full px-3 py-3">
     <!-- Welcome -->
     <h2 class="text-2xl font-bold text-gray-800 mb-6">
         Welcome back,
         <span th:text="${username}">User</span>!
     </h2>
     <!-- Search Bar -->
-    <div class="w-full  mx-auto px-3">
+    <div class="w-full mx-auto px-2 sm:px-3">
         <!-- Modern card with glassmorphism effect & deep shadow -->
-        <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-card border border-white/60 p-4 transition-all duration-300 hover:shadow-hover">
+        <div class="w-full bg-white/95 backdrop-blur-sm rounded-3xl shadow-card border border-white/60 p-4 transition-all duration-300 hover:shadow-hover">
             <!-- Responsive grid: stacks on mobile, horizontal on md+ -->
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 items-center">
                 <!-- 1. Location Input with icon -->
                 <div class="relative flex items-center group">
                     <i class="fa-solid fa-location-dot absolute left-4 text-gray-400 group-focus-within:text-blue-500 transition-colors text-base pointer-events-none z-10"></i>
