@@ -15,7 +15,7 @@
     <nav class="flex-1 px-3 py-6 space-y-1">
         <a th:href="@{/owner/home}"
            th:class="${active == 'home'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-chart-pie"></i>
             <span>Dashboard</span>
         </a>
 
@@ -23,6 +23,12 @@
            th:class="${active == 'hotel'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
             <i class="fa-solid fa-building"></i>
             <span>My Hotels</span>
+        </a>
+
+        <a th:href="@{/owner/room}"
+           th:class="${active == 'room'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-bed"></i>
+            <span>Rooms</span>
         </a>
 
         <a th:href="@{/owner/booking}"
@@ -33,14 +39,14 @@
 
         <a th:href="@{/owner/message}"
            th:class="${active == 'message'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
-            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-comment-dots"></i>
             <span>Messages</span>
         </a>
 
-        <a th:href="@{/owner/payment}"
-           th:class="${active == 'payment'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
-            <i class="fa-solid fa-credit-card"></i>
-            <span>Payments</span>
+        <a th:href="@{/owner/review}"
+           th:class="${active == 'review'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-star"></i>
+            <span>Reviews</span>
         </a>
 
         <a th:href="@{/owner/profile}"

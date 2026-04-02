@@ -37,10 +37,10 @@ public class OwnerController {
         return "owner/index";
     }
 
-    @GetMapping("/payment")
-    public String payment(Model model) {
-        model.addAttribute("content", "owner/Components/payment");
-        model.addAttribute("active", "payment");
+    @GetMapping("/room")
+    public String room(Model model) {
+        model.addAttribute("content", "owner/Components/room");
+        model.addAttribute("active", "room");
         return "owner/index";
     }
 
@@ -48,6 +48,13 @@ public class OwnerController {
     public String profile(Model model) {
         model.addAttribute("content", "owner/Components/profile");
         model.addAttribute("active", "profile");
+        return "owner/index";
+    }
+
+    @GetMapping("/review")
+    public String review(Model model) {
+        model.addAttribute("content", "owner/Components/review");
+        model.addAttribute("active", "review");
         return "owner/index";
     }
 }
