@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Rental - Owner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+<div class="flex flex-1">
+    <!-- slider -->
+    <aside th:replace="owner/Layout/Slider :: sidebar(${active})"></aside>
+
+    <!-- OUTLET -->
+    <main class="flex-1 flex flex-col bg-slate-50 min-h-screen max-h-screen overflow-y-auto">
+        <!-- Top Header -->
+        <header class="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between shrink-0">
+            <h1 class="text-lg font-semibold text-gray-600">Owner Portal</h1>
+            <div class="flex items-center gap-5">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-bell text-gray-500 text-xl"></i>
+                    <span class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold border border-white">3</span>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold text-sm leading-none shrink-0 border border-teal-600">M</div>
+                    <span class="text-gray-700 font-medium text-sm">Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content -->
+        <div class="p-8 grow">
+            <div th:replace="~{__${content}__}"></div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -6,49 +6,63 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller("userHomeController")
-@RequestMapping("dashboard")
+@RequestMapping("/dashboard")
 public class HomeController {
 
-    @RequestMapping("/home")
-    public String HomePage(Model model) {
-        model.addAttribute("content", "user/Components/homepage.html");
+    @GetMapping("/home")
+    public String homePage(Model model) {
+        model.addAttribute("content", "user/Components/homepage");
+        model.addAttribute("active", "dashboard");
+        model.addAttribute("title", "Home");
+        model.addAttribute("username", "Kimrith");
         return "user/index";
     }
 
     @GetMapping("/search")
-    public String Search(Model model){
-        model.addAttribute("content", "user/Components/seach.html");
+    public String search(Model model){
+        model.addAttribute("content", "user/Components/seach");
+        model.addAttribute("active", "search");
+        model.addAttribute("title", "Search");
         return "user/index";
     }
 
     @GetMapping("/mybooking")
-    public String MyBooking(Model model){
-        model.addAttribute("content", "user/Components/booking.html");
+    public String myBooking(Model model){
+        model.addAttribute("content", "user/Components/booking");
+        model.addAttribute("active", "mybooking");
+        model.addAttribute("title", "My Booking");
         return "user/index";
     }
 
     @GetMapping("/favorite")
-    public String Favorite(Model model){
-        model.addAttribute("content", "user/Components/favorite.html");
+    public String favorite(Model model){
+        model.addAttribute("content", "user/Components/favorite");
+        model.addAttribute("active", "favorite");
+        model.addAttribute("title", "Favorite");
         return "user/index";
     }
 
     @GetMapping("/message")
-    public String Message(Model model){
-        model.addAttribute("content", "user/Components/message.html");
+    public String message(Model model){
+        model.addAttribute("content", "user/Components/message");
+        model.addAttribute("active", "message");
+        model.addAttribute("title", "Message");
         return "user/index";
     }
 
     @GetMapping("/payment")
-    public String Payment(Model model){
-        model.addAttribute("content", "user/Components/payment.html");
+    public String payment(Model model){
+        model.addAttribute("content", "user/Components/payment");
+        model.addAttribute("active", "payment");
+        model.addAttribute("title", "Payment");
         return "user/index";
     }
 
     @GetMapping("/profile")
-    public String Profile(Model model){
-        model.addAttribute("content", "user/Components/profile.html");
+    public String profile(Model model){
+        model.addAttribute("content", "user/Components/profile");
+        model.addAttribute("active", "profile");
+        model.addAttribute("title", "Profile");
         return "user/index";
     }
 }
-

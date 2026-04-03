@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" class="flex flex-col h-full">
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-slate-800">Manage Bookings</h2>
+        <div class="flex items-center gap-3">
+            <button class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 shadow-sm transition-colors">
+                <i class="fa-solid fa-filter text-xs"></i> Filter
+            </button>
+            <button class="bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 shadow-sm transition-colors">
+                <i class="fa-solid fa-download text-xs"></i> Export
+            </button>
+        </div>
+    </div>
+
+    <!-- Filters Card -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8 flex gap-6">
+        <div class="flex-1">
+            <label class="block text-xs font-bold text-gray-600 mb-2">Property</label>
+            <select class="w-full border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:border-blue-500 bg-white shadow-sm font-medium cursor-pointer appearance-none text-sm text-gray-600">
+                <option>All Properties</option>
+            </select>
+        </div>
+        <div class="flex-1">
+            <label class="block text-xs font-bold text-gray-600 mb-2">Status</label>
+            <select class="w-full border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:border-blue-500 bg-white shadow-sm font-medium cursor-pointer appearance-none text-sm text-gray-600">
+                <option>All Statuses</option>
+            </select>
+        </div>
+        <div class="flex-[1.5]">
+            <label class="block text-xs font-bold text-gray-600 mb-2">Search Customer</label>
+            <input type="text" placeholder="Name or Booking ID" class="w-full border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:border-blue-500 text-sm font-medium transition-shadow placeholder:text-gray-400">
+        </div>
+    </div>
+
+    <!-- Table Card -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-px mb-6 overflow-x-auto">
+        <table class="w-full text-left text-sm text-gray-600">
+            <thead>
+                <tr class="border-b border-gray-100 bg-gray-50/50">
+                    <th class="px-6 py-4 font-semibold text-gray-500">ID</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Customer</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Room / Property</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Dates</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Payment</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Status</th>
+                    <th class="px-6 py-4 font-semibold text-gray-500">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                <!-- Row 1 -->
+                <tr>
+                    <td class="px-6 py-5 font-bold text-gray-600 text-[13px]">#BK-9012</td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Alice Smith</p>
+                        <p class="text-[11px] text-gray-400 font-medium">alice@example.com</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Deluxe Suite</p>
+                        <p class="text-[11px] text-gray-400 font-medium">Grand Resort & Spa</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-gray-600 text-[12px] mb-1">Oct 10 - Oct 12</p>
+                        <p class="text-[11px] text-gray-400 font-medium">2 Nights, 2 Guests</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-[13px] mb-1">$300</p>
+                        <p class="text-[11px] text-blue-500 font-bold">KHQR</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <span class="px-3 py-1 bg-amber-100/60 text-amber-600 text-[10px] font-bold tracking-wider rounded-md">Pending</span>
+                    </td>
+                    <td class="px-6 py-5">
+                        <div class="flex gap-2">
+                            <button class="bg-teal-500 hover:bg-teal-600 text-white px-3 py-1.5 rounded-full font-bold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"><i class="fa-solid fa-check text-[10px]"></i> Accept</button>
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-full font-bold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"><i class="fa-solid fa-xmark text-[10px]"></i> Reject</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="bg-gray-50/20">
+                    <td class="px-6 py-5 font-bold text-gray-600 text-[13px]">#BK-9011</td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Tom Hardy</p>
+                        <p class="text-[11px] text-gray-400 font-medium">tom@example.com</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Standard Room</p>
+                        <p class="text-[11px] text-gray-400 font-medium">Grand Resort & Spa</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-gray-600 text-[12px] mb-1">Oct 15 - Oct 20</p>
+                        <p class="text-[11px] text-gray-400 font-medium">5 Nights, 1 Guest</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-[13px] mb-1">$450</p>
+                        <p class="text-[11px] text-teal-500 font-bold">Cash</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <span class="px-3 py-1 bg-amber-100/60 text-amber-600 text-[10px] font-bold tracking-wider rounded-md">Pending</span>
+                    </td>
+                    <td class="px-6 py-5">
+                        <div class="flex gap-2">
+                            <button class="bg-teal-500 hover:bg-teal-600 text-white px-3 py-1.5 rounded-full font-bold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"><i class="fa-solid fa-check text-[10px]"></i> Accept</button>
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-full font-bold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"><i class="fa-solid fa-xmark text-[10px]"></i> Reject</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr>
+                    <td class="px-6 py-5 font-bold text-gray-600 text-[13px]">#BK-8995</td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Sam Wilson</p>
+                        <p class="text-[11px] text-gray-400 font-medium">sam@example.com</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-xs mb-1">Ocean Villa</p>
+                        <p class="text-[11px] text-gray-400 font-medium">Ocean View Hotel</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-gray-600 text-[12px] mb-1">Sep 25 - Sep 30</p>
+                        <p class="text-[11px] text-gray-400 font-medium">5 Nights, 2 Guests</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <p class="font-bold text-slate-800 text-[13px] mb-1">$1500</p>
+                        <p class="text-[11px] text-blue-500 font-bold">KHQR</p>
+                    </td>
+                    <td class="px-6 py-5">
+                        <span class="px-3 py-1 bg-green-100/60 text-green-600 text-[10px] font-bold tracking-wider rounded-md">Confirmed</span>
+                    </td>
+                    <td class="px-6 py-5">
+                        <button class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center transition-colors"><i class="fa-solid fa-eye text-[11px]"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex items-center justify-between mt-auto">
+        <p class="text-[13px] text-gray-500 font-medium">Showing 1 to 3 of 120 entries</p>
+        <div class="flex items-center gap-2">
+            <button class="px-4 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 text-[11px] font-bold transition-colors shadow-sm">Previous</button>
+            <button class="w-7 h-7 rounded-full bg-blue-600 text-white text-[11px] font-bold shadow flex items-center justify-center">1</button>
+            <button class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 text-[11px] font-bold flex items-center justify-center transition-colors shadow-sm">2</button>
+            <button class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 text-[11px] font-bold flex items-center justify-center transition-colors shadow-sm">3</button>
+            <button class="px-4 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 text-[11px] font-bold transition-colors shadow-sm">Next</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

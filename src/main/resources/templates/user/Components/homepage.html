@@ -1,16 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
-<div class="bg-red-500 drop-shadow w-full h-12 flex items-center px-6">
-    <h2 class="text-xl font-semibold">
-        HomePage
+<body class="overflow-x-hidden">
+
+<div th:fragment="content(username)"
+     class="w-full px-3 py-3">
+    <!-- Welcome -->
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+        Welcome back,
+        <span th:text="${username}">User</span>!
     </h2>
-</div>
-<div th:fragment="content" class="flex items-center justify-center min-h-[80vh]">
-    <h2
-        class="text-3xl font-bold text-gray-800">
-        Dashboard
-    </h2>
+    <!-- Search Bar -->
+    <div class="w-full mx-auto px-2 sm:px-3">
+        <!-- Modern card with glassmorphism effect & deep shadow -->
+        <div class="w-full bg-white/95 backdrop-blur-sm rounded-3xl shadow-card border border-white/60 p-4 transition-all duration-300 hover:shadow-hover">
+            <!-- Responsive grid: stacks on mobile, horizontal on md+ -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 items-center">
+                <!-- 1. Location Input with icon -->
+                <div class="relative flex items-center group">
+                    <i class="fa-solid fa-location-dot absolute left-4 text-gray-400 group-focus-within:text-blue-500 transition-colors text-base pointer-events-none z-10"></i>
+                    <input type="text"
+                           placeholder="Where are you going?"
+                           class="w-full pl-11 pr-4 py-3.5 text-sm font-medium text-gray-800
+                           placeholder:text-gray-400 bg-gray-50/90 border border-gray-200/80
+                           rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/30
+                           focus:border-blue-400 focus:bg-white transition-all duration-200">
+                </div>
+                <!-- 2. Check-in Date -->
+                <div class="relative flex items-center group">
+                    <i class="fa-solid fa-calendar absolute left-4 text-gray-400 pointer-events-none"></i>
+                    <input type="text"
+                           id="checkInDate"
+                           placeholder="Select Date Check In"
+                           class="w-full pl-11 pr-3 py-3 text-sm text-gray-800 bg-gray-50 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer">
+                </div>
+                <!-- 3. Check-out Date -->
+                <div class="relative flex items-center group">
+                    <i class="fa-solid fa-calendar absolute left-4 text-gray-400 pointer-events-none"></i>
+                    <input type="text"
+                           id="checkOutDate"
+                           placeholder="Select Date Check Out"
+                           class="w-full pl-11 pr-3 py-3 text-sm text-gray-800 bg-gray-50 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer">
+                </div>
+                <!-- 4. Guests & Rooms Select (modern dropdown) -->
+                <div id="guestDropdownContainer" class="relative flex items-center group">
+                        <i class="fa-solid fa-user-group absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors text-base pointer-events-none z-10"></i>
+
+                        <button type="button" id="guestDropdownBtn" class="w-full pl-11 pr-10 py-3.5 text-left text-sm font-medium text-gray-800 bg-gray-50/90 border border-gray-200/80 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 focus:bg-white transition-all duration-200 cursor-pointer flex items-center justify-between group">
+                            <span id="guestDropdownText">2 Guests, 1 Room</span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform group-hover:translate-y-0.5" id="guestChevron"></i>
+                        </button>
+
+                        <div id="guestMenu" class="absolute top-full left-0 mt-2 w-full min-w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden opacity-0 scale-95 transition-all duration-200 origin-top-left">
+
+                            <div class="flex items-center justify-between py-2">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-800">Guests</p>
+                                    <p class="text-xs text-gray-400">Ages 13 or above</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" onclick="changeCount('guests', -1)" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50/50 transition-colors focus:outline-none">-</button>
+                                    <span id="guestsCount" class="text-sm font-semibold text-gray-800 w-4 text-center">2</span>
+                                    <button type="button" onclick="changeCount('guests', 1)" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50/50 transition-colors focus:outline-none">+</button>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-gray-100 my-2"></div>
+
+                            <div class="flex items-center justify-between py-2">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-800">Rooms</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <button type="button" onclick="changeCount('rooms', -1)" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50/50 transition-colors focus:outline-none">-</button>
+                                    <span id="roomsCount" class="text-sm font-semibold text-gray-800 w-4 text-center">1</span>
+                                    <button type="button" onclick="changeCount('rooms', 1)" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50/50 transition-colors focus:outline-none">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- 5. Search Button (modern gradient + interaction) -->
+                <button class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl py-3.5 px-4 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.97] transition-all duration-200 flex items-center justify-center gap-2 text-sm tracking-wide">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    <span>Search hotels</span>
+                </button>
+            </div>
+            <!-- Optional: subtle hint row (modern micro interaction) -->
+            <div class="flex flex-wrap items-center justify-between mt-4 pt-1 px-1">
+                <div class="flex items-center gap-3 text-xs text-gray-400">
+                    <span class="flex items-center gap-1"><i class="fa-regular fa-building"></i> 2,500+ properties</span>
+                    <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-gray-300"></span>
+                    <span class="flex items-center gap-1"><i class="fa-regular fa-star"></i> Flexible cancellation</span>
+                </div>
+                <div class="text-xs text-blue-500/70 hover:text-blue-600 transition cursor-pointer">
+                    <i class="fa-regular fa-question-circle mr-1"></i> Need help?
+                </div>
+            </div>
+        </div>
+        <!-- Modern style note: just a design showcase (optional surrounding content) -->
+        <div class="mt-8 text-center text-sm text-gray-400/70 font-medium">
+      <span class="inline-flex items-center gap-2 backdrop-blur-sm bg-white/30 px-4 py-2 rounded-full">
+        <i class="fa-regular fa-compass text-blue-500"></i> Find your perfect stay · Instant confirmation
+      </span>
+        </div>
+    </div>
+
+    <!-- Featured Hotels -->
+    <h3 class="text-lg font-semibold text-gray-700 mb-4">
+        Featured Hotels
+    </h3>
+    <!-- img data -->
+    <div th:replace="user/share/card/roomcard :: roomcard"></div>
+    <div class="flex flex-col items-center gap-4 py-6">
+
+        <nav class="flex items-center gap-2" aria-label="Pagination">
+
+            <button class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100">
+                <span class="sr-only">Previous</span>
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+
+            <button aria-current="page" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-sm font-semibold text-white shadow-sm shadow-blue-200 focus:outline-none">
+                1
+            </button>
+
+            <button class="inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200 focus:outline-none">
+                2
+            </button>
+
+            <button class="inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200 focus:outline-none">
+                3
+            </button>
+
+            <button class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100">
+                <span class="sr-only">Next</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+        </nav>
+
+        <p class="text-sm text-gray-500 font-medium text-center">
+            Showing <span class="text-gray-900">1</span> to <span class="text-gray-900">12</span> of <span class="text-gray-900">36</span> results
+        </p>
+
+    </div>
+    <!-- Recent Bookings -->
+    <div th:replace="user/share/booking/recent-bookings"></div>
 </div>
 </body>
 </html>
+<script>
+    // Initialize Check-in
+    flatpickr("#checkInDate", {
+        dateFormat: "m/d/Y",
+        minDate: "today",
+    });
+    // Initialize Check-out
+    flatpickr("#checkOutDate", {
+        dateFormat: "m/d/Y",
+        minDate: "today",
+    });
+    const guestBtn = document.getElementById('guestDropdownBtn');
+    const guestMenu = document.getElementById('guestMenu');
+    const guestChevron = document.getElementById('guestChevron');
+    // Toggle Dropdown Menu
+    guestBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = guestMenu.classList.contains('hidden');
+
+        if (isHidden) {
+            guestMenu.classList.remove('hidden');
+            setTimeout(() => {
+                guestMenu.classList.remove('opacity-0', 'scale-95');
+                guestChevron.classList.add('rotate-180');
+            }, 10);
+        } else {
+            closeGuestMenu();
+        }
+    });
+    // Close when clicking outside the box
+    document.addEventListener('click', (e) => {
+        if (!document.getElementById('guestDropdownContainer').contains(e.target)) {
+            closeGuestMenu();
+        }
+    });
+    function closeGuestMenu() {
+        guestMenu.classList.add('opacity-0', 'scale-95');
+        guestChevron.classList.remove('rotate-180');
+        setTimeout(() => guestMenu.classList.add('hidden'), 200);
+    }
+    // Logic for the counters
+    let counts = { guests: 2, rooms: 1 };
+
+    function changeCount(type, amount) {
+        if (counts[type] + amount < 1) return; // Prevent 0 rooms/guests
+        counts[type] += amount;
+
+        document.getElementById(`${type}Count`).innerText = counts[type];
+
+        const guestStr = counts.guests === 1 ? '1 Guest' : `${counts.guests} Guests`;
+        const roomStr = counts.rooms === 1 ? '1 Room' : `${counts.rooms} Rooms`;
+
+        document.getElementById('guestDropdownText').innerText = `${guestStr}, ${roomStr}`;
+    }
+</script>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="cardfavorite" class="w-full mb-10 px-2 md:px-0">
+    <div class="w-full border border-gray-100 rounded-lg shadow-sm bg-white">
+        <div class="hidden md:flex items-center justify-between px-6 py-3 bg-gray-50 border-b border-gray-100 text-sm font-semibold text-gray-500">
+            <div class="w-20 mr-4 flex-shrink-0">Image</div>
+            <div class="flex-grow grid grid-cols-12 gap-4 items-center">
+                <div class="col-span-4">Resort Details</div>
+                <div class="col-span-2">Rating</div>
+                <div class="col-span-3">Price</div>
+                <div class="col-span-3 text-right">Actions</div>
+            </div>
+        </div>
+<!-- Card -->
+        <div class="flex items-center p-3 md:p-4 gap-3 md:gap-4 hover:bg-gray-50/50 transition-colors group relative border-b border-gray-50 last:border-b-0">
+            <div class="relative flex-shrink-0">
+
+                <!-- Image -->
+                <img src="https://picsum.photos/400/250?random=favorite"
+                     class="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md">
+
+                <!-- Heart on Image (mobile only) -->
+                <button
+                        class="absolute top-1.5 right-1.5 sm:hidden w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-gray-100 shadow-sm flex items-center justify-center"
+                        th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+
+                    <span class="sr-only">Add to favorites</span>
+
+                    <i class="text-sm group-hover:scale-110 transition-transform"
+                       th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+
+                </button>
+
+            </div>
+            <div class="flex-grow flex flex-row items-center justify-between md:grid md:grid-cols-12 md:gap-4 overflow-hidden">
+                <div class="md:col-span-4 min-w-0 flex-shrink-1 pr-2">
+                    <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                        Grand Resort & Spa
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-500 truncate">
+                        Bali, Indonesia
+                    </p>
+                    <div class="flex items-center mt-0.5 md:hidden">
+                        <i class="fa-solid fa-star text-yellow-400 text-xs mr-1"></i>
+                        <span class="text-xs font-medium text-gray-600">4.5</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex md:col-span-2 items-center">
+                    <i class="fa-solid fa-star text-yellow-400 mr-1.5"></i>
+                    <span class="font-medium text-gray-600">4.5</span>
+                </div>
+                <div class="md:col-span-3 flex-shrink-0 text-right md:text-left">
+                    <span class="text-blue-600 font-bold text-sm md:text-base whitespace-nowrap">
+                        $120
+                        <span class="text-gray-500 text-xs md:text-sm font-normal">/ night</span>
+                    </span>
+                </div>
+                <div class="hidden sm:flex md:col-span-3 items-center justify-end gap-2 md:gap-3 flex-shrink-0">
+                    <button class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white border border-gray-100 hover:bg-gray-50 shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center"
+                            th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+                        <span class="sr-only">Add to favorites</span>
+                        <i class="text-sm md:text-lg group-hover:scale-110 transition-transform"
+                           th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex sm:hidden items-center justify-end flex-shrink-0">
+                <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                    Book
+                </button>
+            </div>
+        </div>
+        <div class="flex items-center p-3 md:p-4 gap-3 md:gap-4 hover:bg-gray-50/50 transition-colors group relative border-b border-gray-50 last:border-b-0">
+            <div class="relative flex-shrink-0">
+
+                <!-- Image -->
+                <img src="https://picsum.photos/400/250?random=favorite"
+                     class="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md">
+
+                <!-- Heart on Image (mobile only) -->
+                <button
+                        class="absolute top-1.5 right-1.5 sm:hidden w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-gray-100 shadow-sm flex items-center justify-center"
+                        th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+
+                    <span class="sr-only">Add to favorites</span>
+
+                    <i class="text-sm group-hover:scale-110 transition-transform"
+                       th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+
+                </button>
+
+            </div>
+            <div class="flex-grow flex flex-row items-center justify-between md:grid md:grid-cols-12 md:gap-4 overflow-hidden">
+                <div class="md:col-span-4 min-w-0 flex-shrink-1 pr-2">
+                    <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                        Grand Resort & Spa
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-500 truncate">
+                        Bali, Indonesia
+                    </p>
+                    <div class="flex items-center mt-0.5 md:hidden">
+                        <i class="fa-solid fa-star text-yellow-400 text-xs mr-1"></i>
+                        <span class="text-xs font-medium text-gray-600">4.5</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex md:col-span-2 items-center">
+                    <i class="fa-solid fa-star text-yellow-400 mr-1.5"></i>
+                    <span class="font-medium text-gray-600">4.5</span>
+                </div>
+                <div class="md:col-span-3 flex-shrink-0 text-right md:text-left">
+                    <span class="text-blue-600 font-bold text-sm md:text-base whitespace-nowrap">
+                        $120
+                        <span class="text-gray-500 text-xs md:text-sm font-normal">/ night</span>
+                    </span>
+                </div>
+                <div class="hidden sm:flex md:col-span-3 items-center justify-end gap-2 md:gap-3 flex-shrink-0">
+                    <button class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white border border-gray-100 hover:bg-gray-50 shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center"
+                            th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+                        <span class="sr-only">Add to favorites</span>
+                        <i class="text-sm md:text-lg group-hover:scale-110 transition-transform"
+                           th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex sm:hidden items-center justify-end flex-shrink-0">
+                <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                    Book
+                </button>
+            </div>
+        </div>
+        <div class="flex items-center p-3 md:p-4 gap-3 md:gap-4 hover:bg-gray-50/50 transition-colors group relative border-b border-gray-50 last:border-b-0">
+            <div class="relative flex-shrink-0">
+
+                <!-- Image -->
+                <img src="https://picsum.photos/400/250?random=favorite"
+                     class="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md">
+
+                <!-- Heart on Image (mobile only) -->
+                <button
+                        class="absolute top-1.5 right-1.5 sm:hidden w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-gray-100 shadow-sm flex items-center justify-center"
+                        th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+
+                    <span class="sr-only">Add to favorites</span>
+
+                    <i class="text-sm group-hover:scale-110 transition-transform"
+                       th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+
+                </button>
+
+            </div>
+            <div class="flex-grow flex flex-row items-center justify-between md:grid md:grid-cols-12 md:gap-4 overflow-hidden">
+                <div class="md:col-span-4 min-w-0 flex-shrink-1 pr-2">
+                    <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                        Grand Resort & Spa
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-500 truncate">
+                        Bali, Indonesia
+                    </p>
+                    <div class="flex items-center mt-0.5 md:hidden">
+                        <i class="fa-solid fa-star text-yellow-400 text-xs mr-1"></i>
+                        <span class="text-xs font-medium text-gray-600">4.5</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex md:col-span-2 items-center">
+                    <i class="fa-solid fa-star text-yellow-400 mr-1.5"></i>
+                    <span class="font-medium text-gray-600">4.5</span>
+                </div>
+                <div class="md:col-span-3 flex-shrink-0 text-right md:text-left">
+                    <span class="text-blue-600 font-bold text-sm md:text-base whitespace-nowrap">
+                        $120
+                        <span class="text-gray-500 text-xs md:text-sm font-normal">/ night</span>
+                    </span>
+                </div>
+                <div class="hidden sm:flex md:col-span-3 items-center justify-end gap-2 md:gap-3 flex-shrink-0">
+                    <button class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white border border-gray-100 hover:bg-gray-50 shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center"
+                            th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+                        <span class="sr-only">Add to favorites</span>
+                        <i class="text-sm md:text-lg group-hover:scale-110 transition-transform"
+                           th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex sm:hidden items-center justify-end flex-shrink-0">
+                <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                    Book
+                </button>
+            </div>
+        </div>
+        <div class="flex items-center p-3 md:p-4 gap-3 md:gap-4 hover:bg-gray-50/50 transition-colors group relative border-b border-gray-50 last:border-b-0">
+            <div class="relative flex-shrink-0">
+
+                <!-- Image -->
+                <img src="https://picsum.photos/400/250?random=favorite"
+                     class="w-24 h-24 md:w-28 md:h-28 object-cover rounded-md">
+
+                <!-- Heart on Image (mobile only) -->
+                <button
+                        class="absolute top-1.5 right-1.5 sm:hidden w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-gray-100 shadow-sm flex items-center justify-center"
+                        th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+
+                    <span class="sr-only">Add to favorites</span>
+
+                    <i class="text-sm group-hover:scale-110 transition-transform"
+                       th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+
+                </button>
+
+            </div>
+            <div class="flex-grow flex flex-row items-center justify-between md:grid md:grid-cols-12 md:gap-4 overflow-hidden">
+                <div class="md:col-span-4 min-w-0 flex-shrink-1 pr-2">
+                    <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                        Grand Resort & Spa
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-500 truncate">
+                        Bali, Indonesia
+                    </p>
+                    <div class="flex items-center mt-0.5 md:hidden">
+                        <i class="fa-solid fa-star text-yellow-400 text-xs mr-1"></i>
+                        <span class="text-xs font-medium text-gray-600">4.5</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex md:col-span-2 items-center">
+                    <i class="fa-solid fa-star text-yellow-400 mr-1.5"></i>
+                    <span class="font-medium text-gray-600">4.5</span>
+                </div>
+                <div class="md:col-span-3 flex-shrink-0 text-right md:text-left">
+                    <span class="text-blue-600 font-bold text-sm md:text-base whitespace-nowrap">
+                        $120
+                        <span class="text-gray-500 text-xs md:text-sm font-normal">/ night</span>
+                    </span>
+                </div>
+                <div class="hidden sm:flex md:col-span-3 items-center justify-end gap-2 md:gap-3 flex-shrink-0">
+                    <button class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white border border-gray-100 hover:bg-gray-50 shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center"
+                            th:classappend="${active} ? 'text-rose-500' : 'text-gray-400 hover:text-rose-500'">
+                        <span class="sr-only">Add to favorites</span>
+                        <i class="text-sm md:text-lg group-hover:scale-110 transition-transform"
+                           th:classappend="${active} ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex sm:hidden items-center justify-end flex-shrink-0">
+                <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                    Book
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
