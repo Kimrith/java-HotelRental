@@ -1,14 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Payment</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-<div class="flex items-center justify-center min-h-[80vh]">
-    <h2 class="text-3xl font-bold text-pink-500">
-      Payment
-    </h2>
+<body class="bg-gray-50">
+
+<div class="p-6 space-y-8 min-h-screen">
+
+    <!-- Title -->
+    <h1 class="text-2xl font-bold text-gray-800">
+        Payment Methods
+    </h1>
+
+    <!-- Payment Methods -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- KHQR -->
+        <div class="bg-white rounded-xl shadow p-5 flex justify-between items-center">
+
+            <div class="flex items-center gap-4">
+
+                <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex items-center justify-center font-bold">
+                    QR
+                </div>
+
+                <div>
+                    <p class="font-semibold text-gray-800">
+                        KHQR Payment
+                    </p>
+
+                    <p class="text-sm text-gray-500">
+                        Scan QR to pay using ABA, ACLEDA, Wing, etc.
+                    </p>
+                </div>
+
+            </div>
+
+            <span class="bg-green-100 text-green-600 text-xs px-3 py-1 rounded-full font-medium">
+                Available
+            </span>
+
+        </div>
+
+        <!-- Cash -->
+        <div class="bg-white rounded-xl shadow p-5 flex justify-between items-center">
+
+            <div class="flex items-center gap-4">
+
+                <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center font-bold">
+                    $
+                </div>
+
+                <div>
+                    <p class="font-semibold text-gray-800">
+                        Cash Payment
+                    </p>
+
+                    <p class="text-sm text-gray-500">
+                        Pay directly at the hotel reception
+                    </p>
+                </div>
+
+            </div>
+
+            <span class="bg-green-100 text-green-600 text-xs px-3 py-1 rounded-full font-medium">
+                Available
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Payment History -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Payment History</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-100 p-4 md:p-6">
+
+    <div class="max-sm:max-w-6xl mx-auto space-y-6">
+
+        <!-- Title -->
+        <h1 class="text-2xl font-bold text-gray-800">
+            Payment History
+        </h1>
+
+        <!-- ================= MOBILE VIEW ================= -->
+        <div class="md:hidden space-y-4">
+
+            <!-- Card -->
+            <div class="bg-white rounded-xl shadow p-4 space-y-2">
+
+                <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800">
+                    #TXN-84920
+                </span>
+
+                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                    Completed
+                </span>
+                </div>
+
+                <p class="text-sm text-gray-500">
+                    Oct 15, 2023
+                </p>
+
+                <p class="font-medium text-gray-700">
+                    Grand Resort & Spa
+                </p>
+
+                <div class="flex justify-between text-sm">
+                    <span>Visa</span>
+                    <span class="font-semibold">$600.00</span>
+                </div>
+
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-xl shadow p-4 space-y-2">
+
+                <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800">
+                    #TXN-83115
+                </span>
+
+                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                    Completed
+                </span>
+                </div>
+
+                <p class="text-sm text-gray-500">
+                    Sep 02, 2023
+                </p>
+
+                <p class="font-medium text-gray-700">
+                    Ocean View Hotel
+                </p>
+
+                <div class="flex justify-between text-sm">
+                    <span>KHQR</span>
+                    <span class="font-semibold">$150.00</span>
+                </div>
+
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-xl shadow p-4 space-y-2">
+
+                <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-800">
+                    #TXN-79850
+                </span>
+
+                    <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-xs">
+                    Pending
+                </span>
+                </div>
+
+                <p class="text-sm text-gray-500">
+                    Aug 08, 2023
+                </p>
+
+                <p class="font-medium text-gray-700">
+                    Mountain Lodge
+                </p>
+
+                <div class="flex justify-between text-sm">
+                    <span>Cash</span>
+                    <span class="font-semibold">$220.00</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= DESKTOP TABLE ================= -->
+        <div class="hidden md:block bg-white rounded-xl shadow p-6">
+
+            <div class="overflow-x-auto">
+
+                <table class="min-w-[700px] w-full text-sm">
+
+                    <thead class="bg-gray-100 text-gray-600">
+                    <tr>
+                        <th class="p-3 text-left">Transaction ID</th>
+                        <th class="p-3 text-left">Date</th>
+                        <th class="p-3 text-left">Property</th>
+                        <th class="p-3 text-left">Method</th>
+                        <th class="p-3 text-left">Amount</th>
+                        <th class="p-3 text-left">Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="divide-y">
+
+                    <tr>
+                        <td class="p-3 font-medium">#TXN-84920</td>
+                        <td class="p-3">Oct 15, 2023</td>
+                        <td class="p-3">Grand Resort & Spa</td>
+                        <td class="p-3">Visa</td>
+                        <td class="p-3 font-semibold">$600.00</td>
+                        <td class="p-3">
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                            Completed
+                        </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-3 font-medium">#TXN-83115</td>
+                        <td class="p-3">Sep 02, 2023</td>
+                        <td class="p-3">Ocean View Hotel</td>
+                        <td class="p-3">KHQR</td>
+                        <td class="p-3 font-semibold">$150.00</td>
+                        <td class="p-3">
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                            Completed
+                        </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-3 font-medium">#TXN-79920</td>
+                        <td class="p-3">Aug 10, 2023</td>
+                        <td class="p-3">City Lights Inn</td>
+                        <td class="p-3">MC</td>
+                        <td class="p-3 font-semibold">$90.00</td>
+                        <td class="p-3">
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs">
+                            Completed
+                        </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-3 font-medium">#TXN-79850</td>
+                        <td class="p-3">Aug 08, 2023</td>
+                        <td class="p-3">Mountain Lodge</td>
+                        <td class="p-3">Cash</td>
+                        <td class="p-3 font-semibold">$220.00</td>
+                        <td class="p-3">
+                        <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-xs">
+                            Pending
+                        </span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center mt-6 text-sm">
+
+                <p class="text-gray-500">
+                    Showing 1 to 4 of 12 entries
+                </p>
+
+                <div class="flex items-center gap-2">
+
+                    <button class="px-3 py-1 bg-gray-200 rounded">
+                        Previous
+                    </button>
+
+                    <button class="px-3 py-1 bg-blue-600 text-white rounded">
+                        1
+                    </button>
+
+                    <button class="px-3 py-1 bg-gray-200 rounded">
+                        2
+                    </button>
+
+                    <button class="px-3 py-1 bg-gray-200 rounded">
+                        3
+                    </button>
+
+                    <button class="px-3 py-1 bg-gray-200 rounded">
+                        Next
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </body>
+    </html>
+
 </div>
+
 </body>
 </html>
