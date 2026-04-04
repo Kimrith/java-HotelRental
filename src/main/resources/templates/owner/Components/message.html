@@ -1,14 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<div class="flex items-center justify-center min-h-[80vh]">
-    <h2 class="text-3xl font-bold text-purple-800">
-      Messages sent
-    </h2>
+<div th:fragment="content" class="flex flex-col h-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+    <div class="flex h-full">
+        <!-- Sidebar: Conversation List -->
+        <div class="w-1/3 border-r border-gray-100 flex flex-col bg-gray-50/30">
+            <!-- Search Header -->
+            <div class="p-4 border-b border-gray-100 bg-white">
+                <div class="relative">
+                    <input type="text" placeholder="Search guests or bookings..." class="w-full border border-gray-200 rounded-lg pl-4 pr-10 py-2.5 outline-none focus:border-blue-500 text-sm font-medium transition-shadow placeholder:text-gray-400">
+                </div>
+            </div>
+            
+            <!-- List -->
+            <div class="flex-1 overflow-y-auto">
+                <!-- Active Conversation -->
+                <div class="p-4 border-b border-gray-100 bg-blue-50/50 cursor-pointer border-l-4 border-l-blue-600 transition-colors">
+                    <div class="flex justify-between items-start mb-1">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-300 text-white font-bold flex items-center justify-center text-sm shadow-sm">JD</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800">John Doe</h4>
+                                <p class="text-[12px] text-gray-500 truncate w-40">Thank you! See you on Fri...</p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] text-gray-400 font-medium">10:45 AM</span>
+                    </div>
+                </div>
+
+                <!-- Unread Conversation -->
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors bg-white">
+                    <div class="flex justify-between items-start mb-1">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-teal-500 text-white font-bold flex items-center justify-center text-sm shadow-sm">AS</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800">Alice Smith</h4>
+                                <p class="text-[12px] text-gray-800 font-bold truncate w-40">Is there a parking space...</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap">Yesterday</span>
+                           <!-- <span class="w-2 h-2 rounded-full bg-blue-500"></span> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Read Conversation -->
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors bg-white">
+                    <div class="flex justify-between items-start mb-1">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-500 text-white font-bold flex items-center justify-center text-sm shadow-sm">TH</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800">Tom Hardy</h4>
+                                <p class="text-[12px] text-gray-500 truncate w-40">Great stay, thank you.</p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap">Oct 05</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="w-2/3 flex flex-col bg-white">
+            <!-- Chat Header -->
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-white shadow-sm z-10 relative">
+                 <div class="flex items-center gap-3">
+                     <div class="w-10 h-10 rounded-full bg-orange-300 text-white font-bold flex items-center justify-center text-sm shadow-sm">JD</div>
+                     <div>
+                         <h3 class="text-[15px] font-bold text-gray-800">John Doe</h3>
+                         <p class="text-[11px] text-gray-500 font-medium">Booking #BK-9020 (Grand Resort & Spa)</p>
+                     </div>
+                 </div>
+                 <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-700 hover:bg-gray-50 transition-colors shadow-sm">
+                     View Booking
+                 </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="flex-1 overflow-y-auto p-6 bg-gray-50/30 flex flex-col gap-4">
+                <div class="text-center mb-2">
+                    <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Today</span>
+                </div>
+
+                <!-- Customer Message -->
+                <div class="flex flex-col items-start max-w-[80%]">
+                    <div class="bg-white border border-gray-100 rounded-2xl rounded-tl-sm px-5 py-3 shadow-sm inline-block">
+                        <p class="text-[13px] text-gray-700 font-medium leading-relaxed">
+                            Hello, I have an upcoming reservation this Friday. I might arrive around 10 PM. Is late check-in allowed?
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium mt-1 ml-1">09:45 AM</span>
+                </div>
+
+                <!-- Owner Reply 1 -->
+                <div class="flex flex-col items-end self-end max-w-[80%]">
+                    <div class="bg-blue-600 rounded-2xl rounded-tr-sm px-5 py-3 shadow-md inline-block">
+                        <p class="text-[13px] text-white font-medium leading-relaxed">
+                            Hello John! Thank you for reaching out. Let me check your booking.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium mt-1 mr-1">10:15 AM</span>
+                </div>
+
+                 <!-- Owner Reply 2 -->
+                 <div class="flex flex-col items-end self-end max-w-[80%]">
+                    <div class="bg-blue-600 rounded-2xl rounded-tr-sm px-5 py-3 shadow-md inline-block">
+                        <p class="text-[13px] text-white font-medium leading-relaxed">
+                            Yes, your late check-in is confirmed. Our front desk is open 24/7, so you won't have any issues. See you on Friday!
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium mt-1 mr-1">10:30 AM</span>
+                </div>
+
+                 <!-- Customer Reply -->
+                 <div class="flex flex-col items-start max-w-[80%]">
+                    <div class="bg-white border border-gray-100 rounded-2xl rounded-tl-sm px-5 py-3 shadow-sm inline-block">
+                        <p class="text-[13px] text-gray-700 font-medium leading-relaxed">
+                            Thank you! See you on Friday.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium mt-1 ml-1">10:45 AM</span>
+                </div>
+
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-white border-t border-gray-100">
+                <div class="flex items-center gap-3">
+                    <button class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex flex-shrink-0 items-center justify-center transition-colors">
+                        <i class="fa-solid fa-paperclip text-sm"></i>
+                    </button>
+                    <input type="text" placeholder="Type your reply here..." class="flex-1 bg-gray-50 border border-gray-200 rounded-full px-5 py-3 outline-none focus:border-blue-500 text-sm font-medium transition-colors placeholder:text-gray-400">
+                    <button class="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex flex-shrink-0 items-center justify-center transition-colors shadow-md shadow-blue-500/30">
+                        <i class="fa-solid fa-paper-plane text-sm translate-x-[-1px] translate-y-[1px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
