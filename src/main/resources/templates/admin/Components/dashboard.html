@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-dash
+<div th:fragment="dashboard">
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Platform Overview</h2>
 
-</body>
-</html>
+    <!-- 4 Stats Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Card 1: Total Users (Blue) -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold mb-1">Total Users</p>
+                    <h3 class="text-3xl font-bold text-gray-800">12,450</h3>
+                </div>
+                <div class="text-blue-600">
+                    <i class="fa-solid fa-users text-xl"></i>
+                </div>
+            </div>
+            <p class="text-sm text-emerald-500 font-medium"><i class="fa-solid fa-arrow-up text-xs mr-1"></i>+5.2% this week</p>
+        </div>
+
+        <!-- Card 2: Total Hotels (Orange) -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 border-t-4 border-t-orange-400">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold mb-1">Total Hotels</p>
+                    <h3 class="text-3xl font-bold text-gray-800">845</h3>
+                </div>
+                <div class="text-orange-400">
+                    <i class="fa-solid fa-building text-xl"></i>
+                </div>
+            </div>
+            <p class="text-sm text-emerald-500 font-medium"><i class="fa-solid fa-arrow-up text-xs mr-1"></i>+12 properties added</p>
+        </div>
+
+        <!-- Card 3: Total Bookings (Purple) -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 border-t-4 border-t-purple-600">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold mb-1">Total Bookings</p>
+                    <h3 class="text-3xl font-bold text-gray-800">34,020</h3>
+                </div>
+                <div class="text-purple-600">
+                    <i class="fa-solid fa-calendar-check text-xl"></i>
+                </div>
+            </div>
+            <p class="text-sm text-emerald-500 font-medium"><i class="fa-solid fa-arrow-up text-xs mr-1"></i>High engagement</p>
+        </div>
+
+        <!-- Card 4: Platform Revenue (Green) -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 border-t-4 border-t-emerald-500">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold mb-1">Platform Revenue</p>
+                    <h3 class="text-3xl font-bold text-gray-800">$240,500</h3>
+                </div>
+                <div class="text-emerald-500">
+                    <i class="fa-solid fa-sack-dollar text-xl"></i>
+                </div>
+            </div>
+            <p class="text-sm text-emerald-500 font-medium"><i class="fa-solid fa-arrow-up text-xs mr-1"></i>+15% from last month</p>
+        </div>
+    </div>
+
+    <!-- Bottom Section: Table & Action Card -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Recent Signups -->
+        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-lg font-bold text-gray-800">Recent Signups</h3>
+                <button class="px-4 py-2 bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-full text-sm font-semibold transition">View All Users</button>
+            </div>
+            <div class="overflow-x-auto rounded border border-gray-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50/50 text-gray-500 text-sm border-b border-gray-100">
+                            <th class="py-3 px-4 font-semibold">User Name</th>
+                            <th class="py-3 px-4 font-semibold">Email</th>
+                            <th class="py-3 px-4 font-semibold">Role</th>
+                            <th class="py-3 px-4 font-semibold">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-gray-900">David Copper</td>
+                            <td class="py-4 px-4 text-gray-500">davidc@example.com</td>
+                            <td class="py-4 px-4">Guest</td>
+                            <td class="py-4 px-4"><span class="inline-block px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-md text-xs font-bold">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-gray-900">Manager Smith</td>
+                            <td class="py-4 px-4 text-gray-500">smith@hotel.com</td>
+                            <td class="py-4 px-4">Hotel Owner</td>
+                            <td class="py-4 px-4"><span class="inline-block px-2.5 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold">Pending Approval</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-gray-900">Elsa Woods</td>
+                            <td class="py-4 px-4 text-gray-500">elsa@example.com</td>
+                            <td class="py-4 px-4">Guest</td>
+                            <td class="py-4 px-4"><span class="inline-block px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-md text-xs font-bold">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Action Required Card -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 self-start">
+            <h3 class="text-lg font-bold text-gray-800 mb-6">Action Required</h3>
+            <div class="border rounded-lg p-5 mb-5 flex justify-between items-center bg-gray-50 border-gray-100">
+                <div>
+                    <h4 class="text-sm font-bold text-gray-800 mb-1">Pending Approvals</h4>
+                    <p class="text-xs text-gray-500">5 properties awaiting review</p>
+                </div>
+                <div class="bg-red-100 text-red-500 text-xs font-extrabold rounded-full h-6 w-6 flex items-center justify-center">5</div>
+            </div>
+            <button class="w-full py-3 bg-[#0066FF] hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200">
+                Go to Approvals
+            </button>
+        </div>
+
+    </div>
+</div>
