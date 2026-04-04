@@ -6,51 +6,8 @@
 </head>
 <body class="bg-gray-50">
 <div class="p-6 space-y-8 min-h-screen">
-    <!-- Title -->
-    <h1 class="text-2xl font-bold text-gray-800">
-        Payment Methods
-    </h1>
     <!-- Payment Methods -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- KHQR -->
-        <div class="bg-white rounded-xl shadow p-5 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex items-center justify-center font-bold">
-                    QR
-                </div>
-                <div>
-                    <p class="font-semibold text-gray-800">
-                        KHQR Payment
-                    </p>
-                    <p class="text-sm text-gray-500">
-                        Scan QR to pay using ABA, ACLEDA, Wing, etc.
-                    </p>
-                </div>
-            </div>
-            <span class="bg-green-100 text-green-600 text-xs px-3 py-1 rounded-full font-medium">
-                Available
-            </span>
-        </div>
-        <!-- Cash -->
-        <div class="bg-white rounded-xl shadow p-5 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center font-bold">
-                    $
-                </div>
-                <div>
-                    <p class="font-semibold text-gray-800">
-                        Cash Payment
-                    </p>
-                    <p class="text-sm text-gray-500">
-                        Pay directly at the hotel reception
-                    </p>
-                </div>
-            </div>
-            <span class="bg-green-100 text-green-600 text-xs px-3 py-1 rounded-full font-medium">
-                Available
-            </span>
-        </div>
-    </div>
+    <div th:replace="user/share/payment-methods/Payment-Methods :: payment-method"></div>
     <div class="max-sm:max-w-6xl mx-auto space-y-6">
         <!-- Title -->
         <h1 class="text-2xl font-bold text-gray-800">
