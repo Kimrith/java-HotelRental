@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Methods</title>
+</head>
+<body>
+<div class="space-y-8" th:fragment="payment-method">
+    <!-- Title -->
+    <h1 class="text-2xl font-bold text-gray-800">
+         Payment Method
+    </h1>
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- KHQR -->
+        <label>
+            <input type="radio" name="paymentMethod" value="khqr" class="hidden peer">
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm
+                        p-8 flex justify-between items-center
+                        transition-all duration-200
+                        hover:shadow-md
+                       ">
+                <!-- Left -->
+                <div class="flex items-center gap-5">
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+                         style="background-color: #FCEBEB;">
+                        <div th:replace="user/share/icon/Chevron-Icon :: khqr"></div>
+                    </div>
+                    <!-- Text -->
+                    <div>
+                        <p class="font-semibold text-gray-800">
+                            KHQR Payment
+                        </p>
+                        <p class="text-sm text-gray-500 mt-1">
+                            Scan QR to pay using ABA, ACLEDA, Wing, etc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </label>
+
+        <!-- Cash -->
+        <label>
+            <input type="radio" name="paymentMethod" value="cash" class="hidden peer">
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm
+                        p-8 flex justify-between items-center
+                        transition-all duration-200
+                        hover:shadow-md">
+                <!-- Left -->
+                <div class="flex items-center gap-5">
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+                         style="background-color: #EAF3DE;">
+                        <div th:replace="user/share/icon/Chevron-Icon :: cash"></div>
+                    </div>
+                    <!-- Text -->
+                    <div>
+                        <p class="font-semibold text-gray-800">
+                            Cash Payment
+                        </p>
+                        <p class="text-sm text-gray-500 mt-1">
+                            Pay directly at the hotel reception
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>
+
+</body>
+</html>
