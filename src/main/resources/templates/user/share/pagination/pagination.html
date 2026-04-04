@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div th:fragment="pagination" class="flex flex-col items-center gap-4 py-6">
+  <nav class="flex items-center gap-2" aria-label="Pagination">
+    <button class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100">
+      <span class="sr-only">Previous</span>
+      <i class="fa-solid fa-chevron-left text-xs"></i>
+    </button>
+    <button aria-current="page" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-sm font-semibold text-white shadow-sm shadow-blue-200 focus:outline-none">
+      1
+    </button>
+    <button class="inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200 focus:outline-none">
+      2
+    </button>
+    <button class="inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200 focus:outline-none">
+      3
+    </button>
+    <button class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100">
+      <span class="sr-only">Next</span>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+    </button>
+  </nav>
+  <p class="text-sm text-gray-500 font-medium text-center">
+    Showing <span class="text-gray-900">1</span> to <span class="text-gray-900">12</span> of <span class="text-gray-900">36</span> results
+  </p>
+</div>
+</body>
+</html>
