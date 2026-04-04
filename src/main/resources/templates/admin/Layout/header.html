@@ -1,0 +1,16 @@
+<header th:fragment="adminHeader(headerTitle)"
+        class="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between shrink-0">
+
+    <h1 class="text-lg font-semibold text-gray-600" th:text="${headerTitle}"></h1>
+
+    <div class="flex items-center gap-5">
+        <div class="relative cursor-pointer">
+            <i class="fa-solid fa-bell text-gray-500 text-xl"></i>
+            <span class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold border border-white">3</span>
+        </div>
+        <div class="flex items-center gap-2 cursor-pointer">
+            <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold text-sm leading-none shrink-0 border border-teal-600">M</div>
+            <span class="text-gray-700 font-medium text-sm">Admin Heng</span>
+        </div>
+    </div>
+</header>

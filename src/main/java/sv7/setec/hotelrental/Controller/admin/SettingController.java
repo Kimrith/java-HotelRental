@@ -5,15 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("adminDashboardController")
+@Controller("settingController")
 @RequestMapping("/admin")
-
-public class DashboardController {
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        model.addAttribute("title", "admin Panel");
-        model.addAttribute("content", "admin/Components/dashboard");
-        model.addAttribute("active", "dashboard");
+public class SettingController {
+    @GetMapping("/setting")
+    public String setting(Model model) {
+        model.addAttribute("title", "Setting Panel");
+        model.addAttribute("content", "admin/Components/setting");
+        model.addAttribute("active", "setting");
 
         return "admin/index";
     }
