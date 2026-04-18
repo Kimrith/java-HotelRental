@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<aside th:fragment="sidebar(active)"
+       id="sidebar"
+       class="fixed top-0 left-0 z-40
+              bg-gray-900 text-gray-300
+              w-64 min-h-screen
+              bg-gray-900 text-gray-300 flex flex-col
+              transform -translate-x-full
+              lg:translate-x-0
+              transition-transform duration-300">
+    <div class="flex items-center gap-2 px-6 py-5 border-b border-gray-700">
+        <i class="fa-solid fa-hotel text-white text-lg"></i>
+        <span class="text-white text-xl font-semibold">StayHub</span>
+    </div>
+    <nav class="flex-1 px-3 py-6 space-y-1">
+        <a th:href="@{/dashboard/home}"
+           th:class="${active == 'dashboard'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+        <a th:href="@{/dashboard/search}"
+           th:class="${active == 'search'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search Hotels</span>
+        </a>
+        <a th:href="@{/dashboard/mybooking}"
+           th:class="${active == 'mybooking'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>My Bookings</span>
+        </a>
+        <a th:href="@{/dashboard/favorite}"
+           th:class="${active == 'favorite'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-heart"></i>
+            <span>Favorites</span>
+        </a>
+        <a th:href="@{/dashboard/message}"
+           th:class="${active == 'message'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+        <a th:href="@{/dashboard/payment}"
+           th:class="${active == 'payment'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Payments</span>
+        </a>
+        <a th:href="@{/dashboard/profile}"
+           th:class="${active == 'profile'} ? 'flex items-center gap-3 px-4 py-3 bg-gray-800 text-white border-l-4 border-blue-500' : 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded'">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+    <div class="px-4 py-4 border-t bg-gray-900 border-gray-700">
+        <form th:if="${username != 'Guest'}" th:action="@{/logout}" method="post">
+            <button type="submit" class="flex items-center gap-3 text-red-400 hover:text-red-300 w-full text-left">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+        </form>
+
+        <a th:if="${username == 'Guest'}" th:href="@{/user/register}"
+           class="flex items-center gap-3 text-blue-400 hover:text-gray-400">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Register / Login</span>
+        </a>
+    </div></aside>
+</body>
+</html>

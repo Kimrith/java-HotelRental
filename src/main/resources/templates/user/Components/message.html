@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" th:href="@{/user/message.css}">
+</head>
+<body>
+<div class="flex h-screen overflow-hidden mt-2">
+    <!-- ── SIDEBAR ── -->
+    <div class="w-72 max-sm:w-full bg-white flex flex-col border-r border-gray-100" style="flex-shrink:0;">
+        <!-- Sidebar Top -->
+        <div class="sidebar-header px-5 mt-2">
+            <input type="text"
+                   placeholder="Search conversations..."
+                   class="search-input w-full rounded-xl px-4 py-2.5 text-sm text-gray-700 placeholder-gray-400">
+        </div>
+        <!-- Conversation List -->
+        <div class="flex-1 overflow-y-auto sidebar-scroll py-2 mt-6">
+            <!-- Active conversation -->
+            <a th:href="@{/dashboard/message/detail/id}">
+                <div class="conv-item active flex items-center gap-3 px-4 py-3.5 cursor-pointer">
+                    <div class="avatar w-11 h-11 rounded-full text-white flex items-center justify-center text-sm flex-shrink-0">
+                        G
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <p class="font-semibold text-sm text-gray-900 truncate">Grand Resort & Spa</p>
+                            <span class="time-label text-gray-400 flex-shrink-0 ml-2">10:30</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs text-gray-500 truncate">Yes, your late check-in is confirmed...</p>
+                            <span class="unread-badge rounded-full text-white flex items-center justify-center flex-shrink-0 ml-2">2</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sample inactive conversations -->
+            <div class="conv-item flex items-center gap-3 px-4 py-3.5 cursor-pointer opacity-60">
+                <div class="w-11 h-11 rounded-full bg-purple-400 text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                    S
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-0.5">
+                        <p class="font-semibold text-sm text-gray-900 truncate">Sunset Beach Hotel</p>
+                        <span class="time-label text-gray-400 flex-shrink-0 ml-2">Tue</span>
+                    </div>
+                    <p class="text-xs text-gray-500 truncate">Thank you for your booking!</p>
+                </div>
+            </div>
+
+            <div class="conv-item flex items-center gap-3 px-4 py-3.5 cursor-pointer opacity-60">
+                <div class="w-11 h-11 rounded-full bg-orange-400 text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                    M
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-0.5">
+                        <p class="font-semibold text-sm text-gray-900 truncate">Mountain View Inn</p>
+                        <span class="time-label text-gray-400 flex-shrink-0 ml-2">Mon</span>
+                    </div>
+                    <p class="text-xs text-gray-500 truncate">Your room is ready 🏔️</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ── CHAT AREA DESKTOP ── -->
+    <div class="max-sm:hidden">
+<!--        <div th:replace="user/Components/message-detail-id :: message-detail"></div>-->
+    </div>
+</div>
+</body>
+</html>

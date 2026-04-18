@@ -1,0 +1,120 @@
+<div th:fragment="approval">
+    <!-- Header Section -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+        <h2 class="text-2xl font-bold text-gray-800">Pending Approvals</h2>
+        <div class="relative">
+            <select class="bg-white border border-gray-200 text-gray-700 pl-4 pr-10 py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm appearance-none w-40 cursor-pointer">
+                <option>All Requests</option>
+                <option>Properties</option>
+                <option>Accounts</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+        </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-col lg:flex-row gap-6">
+        
+        <!-- Left Column: Pending Items List -->
+        <div class="flex-1 flex flex-col gap-4">
+            
+            <!-- Item 1: Mountain Lodge -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col md:flex-row gap-5 items-start">
+                <!-- Icon/Image -->
+                <div class="w-20 h-20 bg-slate-100 rounded-lg flex items-center justify-center text-slate-500 shrink-0 border border-slate-200">
+                    <i class="fa-solid fa-image text-3xl"></i>
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-1 mt-1">
+                    <div class="flex items-center gap-3 mb-1.5">
+                        <h3 class="text-lg font-bold text-gray-900">Mountain Lodge</h3>
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-yellow-700 text-xs font-bold border border-yellow-100">New Property</span>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-3 flex items-center gap-1.5 font-medium">
+                        <i class="fa-solid fa-location-dot text-gray-400"></i>
+                        <span>Swiss Alps &bull; Submitted by James Woods</span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-2xl">Cozy wooden lodge featuring 12 rooms, ski-in/ski-out access, and complimentary breakfast.</p>
+                </div>
+                
+                <!-- Actions -->
+                <div class="flex flex-col gap-2.5 shrink-0 w-full md:w-36 mt-4 md:mt-0">
+                    <button class="w-full py-2 rounded-full bg-[#36a689] hover:bg-[#2c8a71] text-white text-sm font-semibold flex items-center justify-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-check"></i> Approve
+                    </button>
+                    <button class="w-full py-2 rounded-full bg-[#e8404a] hover:bg-red-600 text-white text-sm font-semibold flex items-center justify-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-xmark"></i> Reject
+                    </button>
+                    <button class="w-full py-2 rounded-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-sm font-semibold transition shadow-sm">
+                        Review Docs
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2: Manager Smith -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col md:flex-row gap-5 items-start">
+                <!-- Icon/Image -->
+                <div class="w-20 h-20 bg-[#f59e61] rounded-full flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-sm border-4 border-orange-100">
+                    MS
+                </div>
+                
+                <!-- Content -->
+                <div class="flex-1 mt-1">
+                    <div class="flex items-center gap-3 mb-1.5">
+                        <h3 class="text-lg font-bold text-gray-900">Manager Smith</h3>
+                        <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold border border-blue-100">Owner Account</span>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-3 font-medium">
+                        smith@hotel.com &bull; +1 234 567 890
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-2xl">Requested an upgrade to Hotel Owner account to list 3 properties in downtown Chicago.</p>
+                </div>
+                
+                <!-- Actions -->
+                <div class="flex flex-col gap-2.5 shrink-0 w-full md:w-36 mt-4 md:mt-0">
+                    <button class="w-full py-2 rounded-full bg-[#36a689] hover:bg-[#2c8a71] text-white text-sm font-semibold flex items-center justify-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-check"></i> Approve
+                    </button>
+                    <button class="w-full py-2 rounded-full bg-[#e8404a] hover:bg-red-600 text-white text-sm font-semibold flex items-center justify-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-xmark"></i> Reject
+                    </button>
+                    <button class="w-full py-2 rounded-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-sm font-semibold transition shadow-sm">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Right Column: Approval Queue Stats -->
+        <div class="w-full lg:w-[320px] shrink-0">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-full lg:h-auto">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Approval Queue</h3>
+                
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 font-medium">New Properties</span>
+                        <span class="font-bold text-gray-900">5</span>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 font-medium">Owner Accounts</span>
+                        <span class="font-bold text-gray-900">2</span>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 font-medium">Room Updates</span>
+                        <span class="font-bold text-gray-900">12</span>
+                    </div>
+                </div>
+                
+                <div class="bg-[#f4f6fb] rounded-xl p-5 border border-slate-100">
+                    <p class="text-xs text-gray-500 font-medium mb-1">Average review time</p>
+                    <p class="text-2xl font-extrabold text-gray-900">4.2 Hours</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

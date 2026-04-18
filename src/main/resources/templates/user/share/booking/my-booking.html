@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+<!-- MAIN CONTENT ONLY (NO HEADER / SIDEBAR) -->
+<div th:fragment="mybooking" class="mx-auto p-2">
+<!-- Destop / tablet-->
+
+<!-- Pedding-->
+    <div class="text-center max-sm:hidden">
+        <h2 class="text-2xl text-yellow-600 font-bold text-gray-800">
+            Pedding Booking
+        </h2>
+        <p class="text-sm text-gray-500">
+            Review your reservations before confirming
+        </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-sm:hidden">
+            <div class="bg-white rounded-xl shadow p-5">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                         class="w-full h-40 object-cover rounded-lg mb-4"
+                         alt="Hotel">
+                    <p class="text-sm text-gray-500">HOTEL</p>
+                    <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+                    <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                        <div class="flex justify-between">
+                            <span>Check-in</span>
+                            <span>Thu, 15 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Check-out</span>
+                            <span>Sun, 20 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Total stay</span>
+                            <span>5 nights</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <p class="text-gray-500">You selected:</p>
+                        <p class="font-medium">1x Deluxe Double Room</p>
+                        <p class="text-gray-600">2 Adults</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                        <span class="font-semibold">Total Price</span>
+                        <span class="text-blue-600 font-bold text-lg">$600</span>
+                    </div>
+                    <div class="flex justify-end mt-6 pt-4 border-t">
+                        <button
+                                type="button"
+                                class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                            Confirm
+                        </button>
+                    </div>
+                    </div>
+            <div class="bg-white rounded-xl shadow p-5">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     class="w-full h-40 object-cover rounded-lg mb-4"
+                     alt="Hotel">
+                <p class="text-sm text-gray-500">HOTEL</p>
+                <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+                <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>Check-in</span>
+                        <span>Thu, 15 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Check-out</span>
+                        <span>Sun, 20 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Total stay</span>
+                        <span>5 nights</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm">
+                    <p class="text-gray-500">You selected:</p>
+                    <p class="font-medium">1x Deluxe Double Room</p>
+                    <p class="text-gray-600">2 Adults</p>
+                </div>
+                <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                    <span class="font-semibold">Total Price</span>
+                    <span class="text-blue-600 font-bold text-lg">$600</span>
+                </div>
+                <div class="flex justify-end mt-6 pt-4 border-t">
+                    <button
+                            type="button"
+                            class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-5">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     class="w-full h-40 object-cover rounded-lg mb-4"
+                     alt="Hotel">
+                <p class="text-sm text-gray-500">HOTEL</p>
+                <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+                <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>Check-in</span>
+                        <span>Thu, 15 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Check-out</span>
+                        <span>Sun, 20 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Total stay</span>
+                        <span>5 nights</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm">
+                    <p class="text-gray-500">You selected:</p>
+                    <p class="font-medium">1x Deluxe Double Room</p>
+                    <p class="text-gray-600">2 Adults</p>
+                </div>
+                <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                    <span class="font-semibold">Total Price</span>
+                    <span class="text-blue-600 font-bold text-lg">$600</span>
+                </div>
+                <div class="flex justify-end mt-6 pt-4 border-t">
+                    <button
+                            type="button"
+                            class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-5">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     class="w-full h-40 object-cover rounded-lg mb-4"
+                     alt="Hotel">
+                <p class="text-sm text-gray-500">HOTEL</p>
+                <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+                <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>Check-in</span>
+                        <span>Thu, 15 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Check-out</span>
+                        <span>Sun, 20 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Total stay</span>
+                        <span>5 nights</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm">
+                    <p class="text-gray-500">You selected:</p>
+                    <p class="font-medium">1x Deluxe Double Room</p>
+                    <p class="text-gray-600">2 Adults</p>
+                </div>
+                <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                    <span class="font-semibold">Total Price</span>
+                    <span class="text-blue-600 font-bold text-lg">$600</span>
+                </div>
+                <div class="flex justify-end mt-6 pt-4 border-t">
+                    <button
+                            type="button"
+                            class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+    </div>
+    <!-- Comfirm-->
+    <div class="text-center max-sm:hidden">
+        <h2 class="text-2xl text-green-600 font-bold text-gray-800">
+            Comfirm Booking
+        </h2>
+        <p class="text-sm text-gray-500">
+            Review your reservations before confirming
+        </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-sm:hidden">
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Reject-->
+    <div class="text-center max-sm:hidden">
+        <h2 class="text-2xl text-red-600 font-bold text-gray-800">
+            Reject Booking
+        </h2>
+        <p class="text-sm text-gray-500">
+            Review your reservations before confirming
+        </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-sm:hidden">
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-full h-40 object-cover rounded-lg mb-4"
+                 alt="Hotel">
+            <p class="text-sm text-gray-500">HOTEL</p>
+            <h3 class="font-semibold text-lg">Grand Resort & Spa</h3>
+            <div class="bg-gray-100 rounded-lg p-3 mt-4 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+            <div class="flex justify-end mt-6 pt-4 border-t">
+                <button
+                        type="button"
+                        class="bg-green-500 hover:bg-green-600
+                           text-white px-5 py-2
+                           rounded-lg">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Mobile responsive -->
+<!-- pedding -->
+    <div class="text-center md:hidden">
+        <h2 class="text-2xl text-yellow-600 font-bold text-gray-800">
+            Pedding Booking
+        </h2>
+        <p class="text-sm text-gray-500">
+            Review your reservations before confirming
+        </p>
+    </div>
+    <div class="sm:hidden flex flex-col gap-3 p-2">
+    <div class="w-full bg-white rounded-xl shadow p-5">
+        <!-- Header -->
+        <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                 class="w-24 h-24 object-cover rounded-lg"
+                 alt="Hotel">
+            <div class="flex-1">
+                <p class="text-sm text-gray-500">HOTEL</p>
+                <h3 class="font-semibold">Grand Resort & Spa</h3>
+            </div>
+            <!-- Toggle Button -->
+            <button
+                    onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                    class="text-gray-600 transition-transform duration-200">
+                <!-- Chevron Icon -->
+                <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+            </button>
+        </div>
+        <!-- Detail Section -->
+        <div class="detail hidden mt-4 border-t pt-4">
+            <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                <div class="flex justify-between">
+                    <span>Check-in</span>
+                    <span>Thu, 15 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Check-out</span>
+                    <span>Sun, 20 Oct</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                    <span>Total stay</span>
+                    <span>5 nights</span>
+                </div>
+            </div>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">You selected:</p>
+                <p class="font-medium">1x Deluxe Double Room</p>
+                <p class="text-gray-600">2 Adults</p>
+            </div>
+            <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                <span class="font-semibold">Total Price</span>
+                <span class="text-blue-600 font-bold text-lg">$600</span>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-white rounded-xl shadow p-5">
+            <!-- Header -->
+            <div class="flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     class="w-24 h-24 object-cover rounded-lg"
+                     alt="Hotel">
+                <div class="flex-1">
+                    <p class="text-sm text-gray-500">HOTEL</p>
+                    <h3 class="font-semibold">Grand Resort & Spa</h3>
+                </div>
+                <!-- Toggle Button -->
+                <button
+                        onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                        class="text-gray-600 transition-transform duration-200">
+                    <!-- Chevron Icon -->
+                    <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+                </button>
+            </div>
+            <!-- Detail Section -->
+            <div class="detail hidden mt-4 border-t pt-4">
+                <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                    <div class="flex justify-between">
+                        <span>Check-in</span>
+                        <span>Thu, 15 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Check-out</span>
+                        <span>Sun, 20 Oct</span>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                        <span>Total stay</span>
+                        <span>5 nights</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm">
+                    <p class="text-gray-500">You selected:</p>
+                    <p class="font-medium">1x Deluxe Double Room</p>
+                    <p class="text-gray-600">2 Adults</p>
+                </div>
+                <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                    <span class="font-semibold">Total Price</span>
+                    <span class="text-blue-600 font-bold text-lg">$600</span>
+                </div>
+            </div>
+        </div>
+        <!-- Confirm -->
+    <div class="text-center">
+            <h2 class="text-2xl text-green-600 font-bold text-gray-800">
+                Confirm Booking
+            </h2>
+            <p class="text-sm text-gray-500">
+                Review your reservations before confirming
+            </p>
+        </div>
+    <div class="sm:hidden flex flex-col gap-3 p-2">
+    <div class="w-full bg-white rounded-xl shadow p-5">
+                <!-- Header -->
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                         class="w-24 h-24 object-cover rounded-lg"
+                         alt="Hotel">
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-500">HOTEL</p>
+                        <h3 class="font-semibold">Grand Resort & Spa</h3>
+                    </div>
+                    <!-- Toggle Button -->
+                    <button
+                            onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                            class="text-gray-600 transition-transform duration-200">
+                        <!-- Chevron Icon -->
+                        <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+                    </button>
+                </div>
+                <!-- Detail Section -->
+                <div class="detail hidden mt-4 border-t pt-4">
+                    <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                        <div class="flex justify-between">
+                            <span>Check-in</span>
+                            <span>Thu, 15 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Check-out</span>
+                            <span>Sun, 20 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Total stay</span>
+                            <span>5 nights</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <p class="text-gray-500">You selected:</p>
+                        <p class="font-medium">1x Deluxe Double Room</p>
+                        <p class="text-gray-600">2 Adults</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                        <span class="font-semibold">Total Price</span>
+                        <span class="text-blue-600 font-bold text-lg">$600</span>
+                    </div>
+                </div>
+            </div>
+    <div class="w-full bg-white rounded-xl shadow p-5">
+                <!-- Header -->
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                         class="w-24 h-24 object-cover rounded-lg"
+                         alt="Hotel">
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-500">HOTEL</p>
+                        <h3 class="font-semibold">Grand Resort & Spa</h3>
+                    </div>
+                    <!-- Toggle Button -->
+                    <button
+                            onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                            class="text-gray-600 transition-transform duration-200">
+                        <!-- Chevron Icon -->
+                        <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+                    </button>
+                </div>
+                <!-- Detail Section -->
+                <div class="detail hidden mt-4 border-t pt-4">
+                    <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                        <div class="flex justify-between">
+                            <span>Check-in</span>
+                            <span>Thu, 15 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Check-out</span>
+                            <span>Sun, 20 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Total stay</span>
+                            <span>5 nights</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <p class="text-gray-500">You selected:</p>
+                        <p class="font-medium">1x Deluxe Double Room</p>
+                        <p class="text-gray-600">2 Adults</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                        <span class="font-semibold">Total Price</span>
+                        <span class="text-blue-600 font-bold text-lg">$600</span>
+                    </div>
+                </div>
+            </div>
+        <!-- Reject -->
+    <div class="text-center">
+            <h2 class="text-2xl text-red-600 font-bold text-gray-800">
+                Reject Booking
+            </h2>
+            <p class="text-sm text-gray-500">
+                Review your reservations before confirming
+            </p>
+        </div>
+    <div class="sm:hidden flex flex-col gap-3 p-2">
+    <div class="w-full bg-white rounded-xl shadow p-5">
+                <!-- Header -->
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                         class="w-24 h-24 object-cover rounded-lg"
+                         alt="Hotel">
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-500">HOTEL</p>
+                        <h3 class="font-semibold">Grand Resort & Spa</h3>
+                    </div>
+                    <!-- Toggle Button -->
+                    <button
+                            onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                            class="text-gray-600 transition-transform duration-200">
+                        <!-- Chevron Icon -->
+                        <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+                    </button>
+                </div>
+                <!-- Detail Section -->
+                <div class="detail hidden mt-4 border-t pt-4">
+                    <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                        <div class="flex justify-between">
+                            <span>Check-in</span>
+                            <span>Thu, 15 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Check-out</span>
+                            <span>Sun, 20 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Total stay</span>
+                            <span>5 nights</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <p class="text-gray-500">You selected:</p>
+                        <p class="font-medium">1x Deluxe Double Room</p>
+                        <p class="text-gray-600">2 Adults</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                        <span class="font-semibold">Total Price</span>
+                        <span class="text-blue-600 font-bold text-lg">$600</span>
+                    </div>
+                </div>
+            </div>
+    <div class="w-full bg-white rounded-xl shadow p-5">
+                <!-- Header -->
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                         class="w-24 h-24 object-cover rounded-lg"
+                         alt="Hotel">
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-500">HOTEL</p>
+                        <h3 class="font-semibold">Grand Resort & Spa</h3>
+                    </div>
+                    <!-- Toggle Button -->
+                    <button
+                            onclick="
+        const detail = this.closest('.bg-white').querySelector('.detail');
+        detail.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-90');"
+                            class="text-gray-600 transition-transform duration-200">
+                        <!-- Chevron Icon -->
+                        <div th:replace="user/share/icon/Chevron-Icon :: ChevronIcon"></div>
+                    </button>
+                </div>
+                <!-- Detail Section -->
+                <div class="detail hidden mt-4 border-t pt-4">
+                    <div class="bg-gray-100 rounded-lg p-3 text-sm">
+                        <div class="flex justify-between">
+                            <span>Check-in</span>
+                            <span>Thu, 15 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Check-out</span>
+                            <span>Sun, 20 Oct</span>
+                        </div>
+                        <div class="flex justify-between mt-1">
+                            <span>Total stay</span>
+                            <span>5 nights</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm">
+                        <p class="text-gray-500">You selected:</p>
+                        <p class="font-medium">1x Deluxe Double Room</p>
+                        <p class="text-gray-600">2 Adults</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t">
+                        <span class="font-semibold">Total Price</span>
+                        <span class="text-blue-600 font-bold text-lg">$600</span>
+                    </div>
+                </div>
+            </div>
+</div>
+</div>
+<script>
+    function toggleDetail(button) {
+
+        const detail = button.closest('.bg-white')
+            .querySelector('.detail');
+
+        detail.classList.toggle("hidden");
+
+        // Change arrow direction
+        if (detail.classList.contains("hidden")) {
+            button.textContent = ">";
+        } else {
+            button.textContent = "v";
+        }
+    }
+</script>
+</body>
+</html>

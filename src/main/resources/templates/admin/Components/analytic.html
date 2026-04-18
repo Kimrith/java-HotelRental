@@ -1,0 +1,193 @@
+<div th:fragment="analytic">
+    <!-- Include ApexCharts for Real Interactive Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Header Section -->
+    <div
+        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 border-b border-gray-100 pb-4">
+        <h2 class="text-2xl font-bold text-gray-800">Reports & Statistics</h2>
+        <div class="relative">
+            <select
+                class="bg-white border border-gray-200 text-gray-700 pl-4 pr-10 py-2 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm appearance-none w-36 cursor-pointer">
+                <option>This Year</option>
+                <option>Last Year</option>
+                <option>This Month</option>
+            </select>
+            <i
+                class="fa-solid fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+        </div>
+    </div>
+
+    <!-- Charts Grid Top Row -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Bookings Growth (Area Chart) -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Bookings Growth</h3>
+            <div id="bookings-chart" class="w-full h-[280px]"></div>
+        </div>
+
+        <!-- Platform Revenue (Bar Chart) -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Platform Revenue</h3>
+            <div id="revenue-chart" class="w-full h-[280px]"></div>
+        </div>
+    </div>
+
+    <!-- Charts Bottom Row -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">Average Ratings Distribution</h3>
+        <div class="flex justify-center items-center">
+            <div id="ratings-chart" class="w-full max-w-2xl h-[320px]"></div>
+        </div>
+    </div>
+
+    <!-- Initialize Charts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1. Bookings Growth - Area Chart
+            var bookingsOptions = {
+                series: [{
+                    name: 'Bookings',
+                    data: [310, 420, 280, 510, 620, 490, 800, 950, 850, 1100, 1300, 1450]
+                }],
+                chart: {
+                    parentHeightOffset: 0,
+                    type: 'area',
+                    height: 280,
+                    toolbar: { show: false },
+                    fontFamily: 'inherit'
+                },
+                colors: ['#0066FF'],
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.4,
+                        opacityTo: 0.05,
+                        stops: [0, 100]
+                    }
+                },
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 3 },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: '#9ca3af' } }
+                },
+                yaxis: {
+                    labels: { style: { colors: '#9ca3af' } }
+                },
+                grid: {
+                    borderColor: '#f3f4f6',
+                    strokeDashArray: 4,
+                    padding: { top: 0, bottom: 0, left: 10, right: 0 }
+                }
+            };
+            var bookingsChart = new ApexCharts(document.querySelector("#bookings-chart"), bookingsOptions);
+            bookingsChart.render();
+
+            // 2. Platform Revenue - Bar Chart
+            var revenueOptions = {
+                series: [{
+                    name: 'Revenue',
+                    data: [15000, 22000, 18000, 29000, 35000, 32000, 48000, 52000, 49000, 65000, 72000, 81000]
+                }],
+                chart: {
+                    parentHeightOffset: 0,
+                    type: 'bar',
+                    height: 280,
+                    toolbar: { show: false },
+                    fontFamily: 'inherit'
+                },
+                colors: ['#10b981'],
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        columnWidth: '55%',
+                    }
+                },
+                dataLabels: { enabled: false },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: '#9ca3af' } }
+                },
+                yaxis: {
+                    labels: {
+                        formatter: function (value) {
+                            return "$" + (value / 1000) + "k";
+                        },
+                        style: { colors: '#9ca3af' }
+                    }
+                },
+                grid: {
+                    borderColor: '#f3f4f6',
+                    strokeDashArray: 4,
+                    padding: { top: 0, bottom: 0, left: 10, right: 0 }
+                }
+            };
+            var revenueChart = new ApexCharts(document.querySelector("#revenue-chart"), revenueOptions);
+            revenueChart.render();
+
+            // 3. Ratings Distribution - Donut Chart
+            var ratingsOptions = {
+                series: [45, 25, 15, 10, 5],
+                labels: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
+                chart: {
+                    type: 'donut',
+                    height: 320,
+                    fontFamily: 'inherit'
+                },
+                colors: ['#0066FF', '#10b981', '#f59e0b', '#f97316', '#ef4444'],
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '72%',
+                            labels: {
+                                show: true,
+                                name: {
+                                    show: true,
+                                    fontSize: '14px',
+                                    color: '#6b7280'
+                                },
+                                value: {
+                                    show: true,
+                                    fontSize: '28px',
+                                    fontWeight: 700,
+                                    color: '#111827'
+                                },
+                                total: {
+                                    show: true,
+                                    showAlways: true,
+                                    label: 'Total Reviews',
+                                    fontSize: '14px',
+                                    fontWeight: 600,
+                                    color: '#6b7280',
+                                    formatter: function (w) {
+                                        return "8,420"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                dataLabels: { enabled: false },
+                stroke: { show: false },
+                legend: {
+                    position: 'right',
+                    offsetY: 0,
+                    height: 250,
+                    itemMargin: {
+                        vertical: 8
+                    },
+                    fontSize: '14px'
+                }
+            };
+            var ratingsChart = new ApexCharts(document.querySelector("#ratings-chart"), ratingsOptions);
+            ratingsChart.render();
+        });
+    </script>
+</div>

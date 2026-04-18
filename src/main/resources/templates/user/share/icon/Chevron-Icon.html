@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div th:fragment="ChevronIcon">
+    <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6 transform transition-transform duration-200"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor"
+       stroke-width="2">
+
+    <path stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 5l7 7-7 7"/>
+  </svg>
+  </div>
+
+    <div th:fragment="Back_Arrow">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-6 h-6"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7" />
+        </svg>
+    </div>
+
+    <div th:fragment="khqr">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="#A32D2D" stroke-width="1.8" fill="none"/>
+            <rect x="13" y="3" width="8" height="8" rx="1.5" stroke="#A32D2D" stroke-width="1.8" fill="none"/>
+            <rect x="3" y="13" width="8" height="8" rx="1.5" stroke="#A32D2D" stroke-width="1.8" fill="none"/>
+            <rect x="15" y="15" width="1.8" height="1.8" rx="0.4" fill="#A32D2D"/>
+            <rect x="18.2" y="15" width="1.8" height="1.8" rx="0.4" fill="#A32D2D"/>
+            <rect x="15" y="18.2" width="1.8" height="1.8" rx="0.4" fill="#A32D2D"/>
+            <rect x="18.2" y="18.2" width="1.8" height="1.8" rx="0.4" fill="#A32D2D"/>
+            <rect x="5.5" y="5.5" width="3" height="3" rx="0.5" fill="#A32D2D"/>
+            <rect x="15.5" y="5.5" width="3" height="3" rx="0.5" fill="#A32D2D"/>
+            <rect x="5.5" y="15.5" width="3" height="3" rx="0.5" fill="#A32D2D"/>
+        </svg>
+    </div>
+
+    <div th:fragment="cash">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#3B6D11" stroke-width="1.8" fill="none"/>
+            <path d="M14.5 8.5C14.5 8.5 13.5 7.5 12 7.5C10.067 7.5 8.5 9.067 8.5 11C8.5 12.933 10.067 14.5 12 14.5C13.933 14.5 15.5 12.933 15.5 11" stroke="#3B6D11" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <path d="M9 13.5C9 13.5 9.8 16.5 12 16.5C13.2 16.5 14 16 14.5 15.5" stroke="#3B6D11" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <line x1="12" y1="6" x2="12" y2="7.5" stroke="#3B6D11" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="12" y1="16.5" x2="12" y2="18" stroke="#3B6D11" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+    </div>
+</body>
+</html>

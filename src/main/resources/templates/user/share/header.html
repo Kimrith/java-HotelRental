@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:fragment="header(title)"
+        class="fixed top-0 z-30
+               left-0 lg:left-64
+               w-full lg:w-[calc(100%-16rem)]
+               flex items-center justify-between
+               bg-white shadow
+               px-4 h-14 md:h-16">
+    <!-- Left: Menu Button -->
+    <button id="menuBtn"
+            class="lg:hidden text-black">
+        <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+    <!-- Center: Page Title -->
+    <h2 class="flex-2 ml-5 max-sm:text-center
+               text-black max-sm:ml-16 font-semibold
+               text-lg">
+        <span th:text="${title}">
+            Dashboard
+        </span>
+    </h2>
+    <!-- Right: Notification + Profile -->
+    <div class="flex items-center gap-4">
+        <!-- Notification -->
+        <div class="relative">
+            <i class="fa-solid fa-bell
+                      text-black text-xl
+                      cursor-pointer hover:scale-110
+                      transition">
+            </i>
+            <!-- Badge -->
+            <span class="absolute -top-1 -right-1
+                         bg-red-500 text-white
+                         text-[10px]
+                         px-1.5 py-0.5
+                         rounded-full">
+                3
+            </span>
+        </div>
+        <!-- Profile -->
+        <div class="flex items-center gap-2 cursor-pointer">
+            <th:block th:if="${username != 'Guest'}">
+                <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-semibold"
+                     th:text="${username.substring(0,1).toUpperCase()}">
+                    U
+                </div>
+                <div class="text-black leading-tight">
+                    <p class="text-sm font-medium" th:text="${username}">User Name</p>
+                    <p class="text-xs opacity-80">Member</p>
+                </div>
+            </th:block>
+
+            <th:block th:if="${username == 'Guest'}">
+                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+                    G
+                </div>
+                <div class="text-black leading-tight">
+                    <p class="text-sm font-medium">Profile</p>
+                    <p class="text-xs opacity-80">Guest</p>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</header>
+</body>
+</html>

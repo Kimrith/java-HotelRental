@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+        <h2 class="text-3xl text-center font-bold text-green-800">
+            My Saved List
+        </h2>
+      <div class="mt-8">
+        <div th:replace="user/share/card/favorite :: cardfavorite"></div>
+      </div>
+  </div>
+</body>
+</html>
