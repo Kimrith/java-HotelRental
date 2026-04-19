@@ -14,7 +14,6 @@ public class HomeController {
         model.addAttribute("content", "user/Components/homepage");
         model.addAttribute("active", "dashboard");
         model.addAttribute("title", "Home");
-        model.addAttribute("username", "Kimrith");
         return "user/index";
     }
 }

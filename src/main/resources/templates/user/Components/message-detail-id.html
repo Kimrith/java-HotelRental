@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/user/message.css}">
+</head>
+<body>
+  <div th:fragment="message-detail" class="flex-1 flex flex-col bg-gray-50 w-full h-full min-w-0 relative">
+  <!-- HEADER (fixed) -->
+  <div class="chat-header  bg-gray-100 p-4 top-14 left-0 md:left-64 right-0 z-30 fixed flex items-center gap-3">
+    <!-- Back arrow (mobile only) -->
+    <a  th:href="@{/dashboard/message}">
+      <button th:replace="user/share/icon/Chevron-Icon :: Back_Arrow"
+              class="md:hidden  hidden w-9 h-9 flex items-center justify-center rounded-xl hover:bg-gray-100 text-gray-600 transition-colors flex-shrink-0">
+      </button>
+    </a>
+    <!-- Avatar -->
+    <div class="avatar w-10 h-10 rounded-full text-white flex items-center justify-center text-sm flex-shrink-0">
+      G
+    </div>
+    <!-- Info -->
+    <div class="flex-1 min-w-0">
+      <p class="font-semibold text-gray-900 text-sm leading-tight">Grand Resort &amp; Spa</p>
+      <div class="flex items-center gap-1.5 mt-0.5">
+        <div class="online-dot"></div>
+        <span class="text-xs text-gray-500">Online now</span>
+      </div>
+    </div>
+    <!-- Actions -->
+    <div class="flex items-center gap-1">
+      <button class="w-9 h-9 rounded-xl hover:bg-gray-100 flex items-center justify-center text-gray-500 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- MESSAGES -->
+  <div id="chatContainer"
+       class="flex-1 overflow-y-auto px-4 md:px-6 pt-12 pb-24 space-y-3 chat-scroll">
+    <!-- Date divider -->
+    <div class="flex items-center gap-3 my-2">
+      <div class="flex-1 h-px bg-gray-200"></div>
+      <span class="text-xs text-gray-400 font-medium px-2">Today</span>
+      <div class="flex-1 h-px bg-gray-200"></div>
+    </div>
+    <!-- USER MESSAGE -->
+    <div class="message-row flex justify-end">
+      <div class="max-w-xs md:max-w-md">
+        <div class="bubble-user text-white px-4 py-3 rounded-2xl rounded-tr-sm text-sm leading-relaxed">
+          Hello, I have an upcoming reservation this Friday.
+          I might arrive around 10 PM. Is late check-in allowed?
+        </div>
+        <div class="time-label text-gray-400 text-right mt-1 pr-1">08:45 AM</div>
+      </div>
+    </div>
+    <!-- HOTEL MESSAGE -->
+    <div class="message-row flex justify-start gap-2.5">
+      <div class="avatar w-8 h-8 rounded-full text-white flex items-center justify-center text-xs flex-shrink-0 mt-auto">
+        G
+      </div>
+      <div class="max-w-xs md:max-w-md">
+        <div class="bubble-hotel px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-gray-800 leading-relaxed">
+          Hello John! Thank you for reaching out.
+          Let me check your booking.
+        </div>
+        <div class="time-label text-gray-400 mt-1 pl-1">10:15 AM</div>
+      </div>
+    </div>
+    <!-- HOTEL MESSAGE -->
+    <div class="message-row flex justify-start gap-2.5">
+      <div class="avatar w-8 h-8 rounded-full text-white flex items-center justify-center text-xs flex-shrink-0 mt-auto">
+        G
+      </div>
+      <div class="max-w-xs md:max-w-md">
+        <div class="bubble-hotel px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-gray-800 leading-relaxed">
+          Yes, your late check-in is confirmed.
+          Our front desk is open 24/7, so you won't have any issues. 😊
+        </div>
+        <div class="time-label text-gray-400 mt-1 pl-1">10:30 AM</div>
+      </div>
+    </div>
+  </div>
+  <!-- INPUT (fixed) -->
+  <div class="input-area border-t border-gray-100 px-4 py-3 fixed bottom-0 left-0 md:left-72 right-0 z-30">
+    <div class="flex items-center gap-3 max-w-4xl mx-auto">
+      <!-- Attachment button -->
+      <button class="w-9 h-9 rounded-xl hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+        </svg>
+      </button>
+
+      <!-- Text input -->
+      <input type="text"
+             placeholder="Type a message..."
+             class="flex-1 bg-gray-100 rounded-2xl px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:bg-white transition-all">
+
+      <!-- Send button -->
+      <button class="send-btn w-10 h-10 rounded-full text-white flex items-center justify-center flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
