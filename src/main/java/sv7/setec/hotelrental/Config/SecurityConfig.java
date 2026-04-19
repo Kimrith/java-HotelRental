@@ -36,6 +36,7 @@ public class SecurityConfig {
                 })
                 .oauth2Login(oauth2 -> {
                     oauth2.loginPage("/user/register");
+//                    oauth2.loginPage("/dashboard/home");
                     // 2. THIS IS THE MISSING PART: Link the service here
                     oauth2.userInfoEndpoint(userInfo ->
                             userInfo.userService(customOAuth2UserService)
