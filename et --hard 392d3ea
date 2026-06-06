@@ -1,0 +1,65 @@
+[33m5515c8e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mGet/Post-RoomCart[m[33m)[m 234
+[33m431cfdc[m sdfgh
+[33m2ed4183[m sdfgh
+[33m34aa1e5[m s
+[33mf58cc59[m asdfsdfsda
+[33m48e4861[m get-homeage / post booking into mybooking
+[33mb886fe7[m get/post-RoomCart
+[33m24c8ace[m[33m ([m[1;32mmain[m[33m)[m resolve-resgister-by-fill
+[33m392d3ea[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/clean-roomcart[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mremove-cart[m[33m, [m[1;32mclean-roomcart[m[33m, [m[1;32mUpdate-SecurityConfig[m[33m)[m main-merge-integrate-google
+[33m86facaa[m[33m ([m[1;31morigin/google[m[33m, [m[1;32mgoogle[m[33m)[m integrate-google
+[33m52e246a[m[33m ([m[1;31morigin/final-secure-repo[m[33m, [m[1;32msuper-clean-branch[m[33m, [m[1;32msecure-final[m[33m)[m feat: complete clean project setup
+[33m81ad202[m Merge pull request #19 from Kimrith/mac0s
+[33m6f98558[m[33m ([m[1;31morigin/mac0s[m[33m)[m update message layout and header text in message.html
+[33mc810d90[m Merge pull request #18 from Kimrith/controller
+[33m841a8f1[m[33m ([m[1;31morigin/controller[m[33m)[m update controller
+[33m2e0ffae[m Merge remote-tracking branch 'origin/main'
+[33m8c75208[m update-file-struture
+[33m0929da3[m Merge pull request #17 from Kimrith/adminByHeng
+[33m576ae61[m Merge pull request #16 from Kimrith/maintenance-owner
+[33mea914d0[m[33m ([m[1;31morigin/maintenance-owner[m[33m)[m addd page message
+[33mc6bb38f[m[33m ([m[1;31morigin/adminByHeng[m[33m)[m completed admin ui
+[33m3d20f8b[m dash
+[33m8a6ae57[m Merge branch 'main' into adminByHeng
+[33m728fd35[m admin layout
+[33m1a13673[m Merge pull request #15 from Kimrith/payment
+[33m88e2bca[m[33m ([m[1;31morigin/payment[m[33m, [m[1;32mpayment[m[33m)[m Add user profile UI, payment methods layout, icons, and static avatar image
+[33mcd5daa6[m payment-pagination
+[33m452164a[m Merge branch 'main' into adminByHeng
+[33m6a7baee[m Merge pull request #14 from Kimrith/message
+[33m9686079[m[33m ([m[1;32mmessage[m[33m)[m payment-not-complete
+[33m77cc418[m[33m ([m[1;31morigin/message[m[33m)[m update message success
+[33m7b2b22b[m Merge branch 'main' into adminByHeng
+[33md376b97[m jui
+[33mefb37b8[m Merge pull request #13 from Kimrith/favorite
+[33m6cf1302[m[33m ([m[1;31morigin/favorite[m[33m, [m[1;32mfavorite[m[33m)[m favotite-sucess
+[33m4b30315[m Merge pull request #12 from Kimrith/search-mybooking
+[33m49f1ce5[m[33m ([m[1;31morigin/search-mybooking[m[33m, [m[1;32msearch-mybooking[m[33m)[m my-boking-ui-done
+[33mf136e65[m Merge pull request #11 from Kimrith/owner-tablet
+[33me2ab76e[m[33m ([m[1;31morigin/owner-tablet[m[33m, [m[1;31morigin/navbar-owner[m[33m)[m last
+[33m3554bbc[m ipad tablet success
+[33mb0bb6cb[m Merge pull request #10 from Kimrith/navbar-owner
+[33m8f05c24[m success
+[33m6e7e708[m my-booking
+[33m2772f4f[m my-booking
+[33m4ba8a50[m Merge pull request #9 from Kimrith/dashboard-user
+[33mba82c2a[m[33m ([m[1;31morigin/dashboard-user[m[33m, [m[1;32mdashboard-user[m[33m)[m Update dashboard user layout and components
+[33m5324f1a[m Merge pull request #8 from Kimrith/te1
+[33m03ff055[m[33m ([m[1;31morigin/te1[m[33m)[m owner flow file
+[33ma082f48[m Merge pull request #7 from Kimrith/te1
+[33m9261f60[m Merge branch 'main' of https://github.com/Kimrith/java-HotelRental into te1
+[33mada6f84[m owner
+[33m659f3e2[m Merge pull request #6 from Kimrith/active-link
+[33mfeb5ce3[m[33m ([m[1;31morigin/active-link[m[33m)[m active-sider
+[33m83a1a0e[m Merge pull request #5 from Kimrith/rith-jui
+[33mde9a75c[m[33m ([m[1;31morigin/rith-jui[m[33m)[m jui
+[33m4c0d9e6[m[33m ([m[1;32mthyleaf-kimrith[m[33m)[m Merge pull request #4 from Kimrith/layout-compoentssetup
+[33m58264b5[m[33m ([m[1;31morigin/layout-compoentssetup[m[33m, [m[1;32mlayout-compoentssetup[m[33m)[m layout&components
+[33m702a740[m Merge pull request #3 from Kimrith/te1
+[33m4908e08[m te1
+[33mab5313f[m Merge pull request #2 from Kimrith/thyleaf-kimrith
+[33m1c6225c[m[33m ([m[1;31morigin/thyleaf-kimrith[m[33m)[m add templates and controller files
+[33mfc6f3f7[m Merge pull request #1 from Kimrith/thyleaf-kimrith
+[33m5c479c7[m sidebar-footer and config layout
+[33mbef14f9[m start
+[33m4326447[m first commit
